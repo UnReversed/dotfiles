@@ -1,9 +1,8 @@
-{ ... }: {
+{ 
+  pkgs,
+  ... 
+}: {
   nix = {
-    gc = {
-      automatic = true;
-      # options = "--delete-older-than +5";
-    };
     settings = {
       experimental-features = [ "nix-command" "flakes" ]; 
 
@@ -23,6 +22,19 @@
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       ];
+    };
+  };
+
+  environment.systemPackages = with pkgs;[ 
+    nvd
+    nix-output-monitor
+  ];
+  
+  programs.nh = {
+    enable = true;
+    clean = {
+      enable = true;
+      extraArgs = "--keep 10";
     };
   };
 
