@@ -3,22 +3,24 @@
 }: {
   programs.waybar = {
     enable = true;
+    style = ./style.css;
     settings = {
       mainBar = {
         position = "top";
         spacing = 4;
         modules-left = [
           "hyprland/workspaces"
-          "backlight"
         ];
-        modules-center = [];
+        modules-center = [
+          "clock"
+        ];
         modules-right = [
           "network"
           "power-profiles-daemon"
           "cpu"
           "memory"
           "temperature"
-          "clock"
+
         ];
         clock = {
           timezone = "Europe/Warsaw";
@@ -30,7 +32,16 @@
           tooltip = false;
         };
         memory = {
-          format = "{}% ";
+          format = "{used:0.1f}G/{total:0.1f}G ";
+        };
+        "hyprland/workspaces" = {
+          format = "{id}{windows}";
+          window-rewrite-default = "󰣆";
+          window-rewrite = {
+            "class<VSCodium>" = "";
+            "class<Firefox>" = "";
+            "class<Alacritty>" = "";
+          };
         };
     #         "temperature": {
     #     // "thermal-zone": 2,
