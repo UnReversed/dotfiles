@@ -11,6 +11,7 @@
     ./packages.nix
     ./editors
     ./containers.nix
+    ./hyper
   ];
 
   services.ssh-agent.enable = true;
