@@ -12,7 +12,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/919327f0-1000-43ed-af64-761e2fd3cd27";
       fsType = "ext4";
