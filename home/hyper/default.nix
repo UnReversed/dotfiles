@@ -2,6 +2,10 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ./hyprland.nix
+  ];
+
    services.hypridle = {
     enable = true;
     settings = {
