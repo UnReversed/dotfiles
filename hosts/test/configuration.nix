@@ -28,7 +28,7 @@
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
-  # time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "Europe/Warsaw";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -36,17 +36,18 @@
 
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
+  console = {
+    # keyMap = "us";
+    useXkbConfig = true; # use xkb.options in tty.
+  };
 
   # Enable the X11 windowing system.
 
   # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
+  services.xserver.xkb = {
+    layout = "pl";
+    variant = "qwertz";
+  };
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
