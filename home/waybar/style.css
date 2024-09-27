@@ -164,8 +164,9 @@ tooltip {
     padding-left: 3px;
 }
 
-#hyprland-window {
+#window {
     margin-left: 5px;
+    color: @foreground;
 }
 
 #custom-cpuinfo {
@@ -183,6 +184,7 @@ tooltip {
 
 #memory {
     background: @memory;
+    color: @foreground;
     padding-left: 1px;
     padding-right: 0px;
 }
@@ -196,6 +198,7 @@ tooltip {
 
 #cpu {
     background: @cpu;
+    color: @foreground;
 }
 
 #custom-leftin1 {
@@ -237,6 +240,7 @@ tooltip {
 
 #clock.time {
     background: @time;
+    color: @foreground;
 }
 
 #custom-right3 {
@@ -247,6 +251,7 @@ tooltip {
 /* Date */
 #clock.date {
     background: @date;
+    color: @foreground;
 }
 
 #custom-right4 {
