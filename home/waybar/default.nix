@@ -119,7 +119,7 @@
           max-length = 7;
         };
         cpu = {
-          format = " {usage}%";
+          format = "  {usage}%";
           tooltip = false;
           interval = 5;
           min-length = 6;
