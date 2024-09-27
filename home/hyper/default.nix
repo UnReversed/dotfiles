@@ -61,7 +61,7 @@
           text =
             ''cmd[update:1000] echo "<b><big> $(date +"%H:%M:%S") </big></b>"'';
           font_size = 64;
-          position = "0, 16";
+          position = "0, 60";
           halign = "center";
           valign = "center";
         }

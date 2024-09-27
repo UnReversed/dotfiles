@@ -23,7 +23,8 @@ in
       ];
 
       input = {
-        kb_layout = "us";
+        kb_layout = "pl";
+        # kb_variant = "qwertz";
 
         touchpad = {
             natural_scroll = "no";
@@ -128,7 +129,7 @@ in
         "${super}, E, exec, dolphin"
         "${super}, V, togglefloating"
         "${super}, R, exec, rofi -show drun -show-icons"
-        "${super}, L, exec, pidof hyprlock || hyprlock"
+        "${super}, L, exec, pidof hyprlock || hyprlock --immediate"
         "${super}, P, pseudo" # dwindle
         "${super}, J, togglesplit" # dwindle
 
