@@ -13,6 +13,7 @@
       ../../modules/wayland
       ../../modules/security
       ../../modules/remote-desktop
+      ../../modules/audio
       # ./disko.nix
     ];
 
