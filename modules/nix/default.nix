@@ -39,7 +39,6 @@
   };
 
   system = {
-    autoUpgrade.enable = true;
     stateVersion = "23.11";
   };
   nixpkgs.config = { 
