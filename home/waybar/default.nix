@@ -52,7 +52,7 @@
           # "custom/media"
 
           "custom/left6"
-          # "pulseaudio"
+          "pulseaudio"
 
           "custom/left7"
           "backlight"
@@ -172,21 +172,21 @@
           min-length = 5;
           max-length = 35;
         };
-        # "pulseaudio" = {
-        #   format = "{icon} {volume}%";
-        #   format-muted = "婢 {volume}%";
-        #   format-icons = {
-        #       headphone = "󰋋";
-        #       default = ["󰖀" "󰕾"];
-        #   };
-        #   # "on-click" = "~/.config/waybar/scripts/volumecontrol.sh -o m";
-        #   # "on-click-right" = "pavucontrol -t 3";
-        #   # "on-scroll-up" = "~/.config/waybar/scripts/volumecontrol.sh -o i";
-        #   # "on-scroll-down" = "~/.config/waybar/scripts/volumecontrol.sh -o d";
-        #   # "scroll-step" = 10;
-        #   min-length = 6;
-        #   max-length = 6;
-        # };
+        "pulseaudio" = {
+          format = "{icon} {volume}%";
+          format-muted = "婢 {volume}%";
+          format-icons = {
+              headphone = "󰋋";
+              default = ["󰖀" "󰕾"];
+          };
+          # "on-click" = "~/.config/waybar/scripts/volumecontrol.sh -o m";
+          # "on-click-right" = "pavucontrol -t 3";
+          # "on-scroll-up" = "~/.config/waybar/scripts/volumecontrol.sh -o i";
+          # "on-scroll-down" = "~/.config/waybar/scripts/volumecontrol.sh -o d";
+          # "scroll-step" = 10;
+          min-length = 6;
+          max-length = 6;
+        };
 
         "backlight" = {
           format = "{icon} {percent}%";

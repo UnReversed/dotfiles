@@ -92,6 +92,7 @@ tooltip {
 #backlight,
 #battery,
 #custom-power {
+    color: @foreground;
     opacity: 1;
     margin-bottom: 0px;
     padding-right: 4px;
@@ -293,6 +294,7 @@ tooltip {
 }
 
 #pulseaudio {
+    color: @foreground;
     background: @pulseaudio;
 }
 
