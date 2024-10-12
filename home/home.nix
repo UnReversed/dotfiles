@@ -9,6 +9,7 @@
     ./editors
     ./containers.nix
     ./hyper
+    ./browser
   ];
 
   services.ssh-agent.enable = true;

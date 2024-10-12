@@ -13,6 +13,12 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # inspired by https://github.com/Misterio77/nix-config/blob/637e5f350a1f82ad2cd3da2a8a028ebf9f39b02e/flake.nix#L45
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -31,6 +37,7 @@
           home-manager.nixosModules.home-manager
           {
             home-manager = {
+              backupFileExtension = "backup";
               useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = {
