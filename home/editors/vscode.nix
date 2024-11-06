@@ -11,6 +11,7 @@
       ms-kubernetes-tools.vscode-kubernetes-tools
 
       jnoortheen.nix-ide
+      mhutchie.git-graph
     ];
   };
 }
