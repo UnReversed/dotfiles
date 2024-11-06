@@ -1,6 +1,6 @@
 {...}: {
-  home.username = "test";
-  home.homeDirectory = "/home/test";
+  home.username = "unreversed";
+  home.homeDirectory = "/home/unreversed";
 
   imports = [
     ./shell

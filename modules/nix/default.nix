@@ -1,10 +1,7 @@
-{ 
-  pkgs,
-  ... 
-}: {
+{pkgs, ...}: {
   nix = {
     settings = {
-      experimental-features = [ "nix-command" "flakes" ]; 
+      experimental-features = ["nix-command" "flakes"];
 
       auto-optimise-store = true;
       sandbox = true;
@@ -25,11 +22,11 @@
     };
   };
 
-  environment.systemPackages = with pkgs;[ 
+  environment.systemPackages = with pkgs; [
     nvd
     nix-output-monitor
   ];
-  
+
   programs.nh = {
     enable = true;
     clean = {
@@ -38,11 +35,8 @@
     };
   };
 
-  system = {
-    stateVersion = "23.11";
-  };
-  nixpkgs.config = { 
+  nixpkgs.config = {
     allowBroken = false;
-    allowUnfree = true; 
+    allowUnfree = true;
   };
 }

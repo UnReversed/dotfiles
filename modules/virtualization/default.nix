@@ -1,8 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
-
+{pkgs, ...}: {
   virtualisation = {
     docker = {
       enable = true;
@@ -15,7 +11,7 @@
     };
     libvirtd = {
       enable = true;
-      
+
       qemu.RunAsRoot = true;
     };
 
@@ -24,7 +20,7 @@
 
   programs.virt-manager.enable = true;
 
-  environment.systemPackages = with pkgs;[ 
+  environment.systemPackages = with pkgs; [
     virt-viewer
 
     qemu_kvm

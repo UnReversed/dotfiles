@@ -1,21 +1,18 @@
-{
-  pkgs,
-  ...
-}: 
-let 
+{pkgs, ...}: let
   super = "SUPER";
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.waybar}/bin/waybar &
     ${pkgs.dunst}/bin/dunst
   '';
-in 
-{
+in {
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       monitor = [
         "HDMI-A-1, 2160x1440@60, 0x0, 1"
+        "eDP-1, 1920x1080, 0x0 ,1"
         ",preferred,auto,auto"
+        "Unknown-1 , disable"
       ];
 
       env = [
@@ -27,7 +24,7 @@ in
         # kb_variant = "qwertz";
 
         touchpad = {
-            natural_scroll = "no";
+          natural_scroll = "no";
         };
 
         sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
@@ -52,11 +49,11 @@ in
         # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
         rounding = 10;
-        
+
         blur = {
-            enabled = true;
-            size = 3;
-            passes = 1;
+          enabled = true;
+          size = 3;
+          passes = 1;
         };
 
         drop_shadow = true;
@@ -72,7 +69,7 @@ in
 
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
 
-        animation = [ 
+        animation = [
           "windows, 1, 7, myBezier"
           "windowsOut, 1, 7, default, popin 80%"
           "border, 1, 10, default"
@@ -88,18 +85,18 @@ in
       };
 
       master = {
-          # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-          new_status = "master";
+        # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
+        new_status = "master";
       };
 
       gestures = {
-          # See ttps://wiki.hyprland.org/Configuring/Variables/ for more
-          workspace_swipe = false;
+        # See ttps://wiki.hyprland.org/Configuring/Variables/ for more
+        workspace_swipe = false;
       };
 
       misc = {
-          # See https://wiki.hyprland.org/Configuring/Variables/ for more
-          force_default_wallpaper = -1; # Set to 0 to disable the anime mascot wallpapers
+        # See https://wiki.hyprland.org/Configuring/Variables/ for more
+        force_default_wallpaper = -1; # Set to 0 to disable the anime mascot wallpapers
       };
 
       # Example per-device config
@@ -117,14 +114,13 @@ in
       # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
       # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
 
-
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
       # $mainMod = SUPER
 
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
       bind = [
         "${super}, Q, exec, alacritty"
-        "${super}, C, killactive" 
+        "${super}, C, killactive"
         "${super}, M, exit"
         "${super}, E, exec, dolphin"
         "${super}, V, togglefloating"
@@ -133,13 +129,13 @@ in
         "${super}, P, pseudo" # dwindle
         "${super}, J, togglesplit" # dwindle
 
-      # Move focus with mainMod + arrow keys
+        # Move focus with mainMod + arrow keys
         "${super}, left, movefocus, l"
         "${super}, right, movefocus, r"
         "${super}, up, movefocus, u"
         "${super}, down, movefocus, d"
 
-      # Switch workspaces with mainMod + [0-9]
+        # Switch workspaces with mainMod + [0-9]
         "${super}, 1, workspace, 1"
         "${super}, 2, workspace, 2"
         "${super}, 3, workspace, 3"
@@ -151,7 +147,7 @@ in
         "${super}, 9, workspace, 9"
         "${super}, 0, workspace, 10"
 
-      # Move active window to a workspace with mainMod + SHIFT + [0-9]
+        # Move active window to a workspace with mainMod + SHIFT + [0-9]
         "${super} SHIFT, 1, movetoworkspace, 1"
         "${super} SHIFT, 2, movetoworkspace, 2"
         "${super} SHIFT, 3, movetoworkspace, 3"
@@ -163,16 +159,16 @@ in
         "${super} SHIFT, 9, movetoworkspace, 9"
         "${super} SHIFT, 0, movetoworkspace, 10"
 
-      # Example special workspace (scratchpad)
+        # Example special workspace (scratchpad)
         "${super}, S, togglespecialworkspace, magic"
         "${super} SHIFT, S, movetoworkspace, special:magic"
 
-      # Scroll through existing workspaces with mainMod + scroll
+        # Scroll through existing workspaces with mainMod + scroll
         "${super}, mouse_down, workspace, e+1"
         "${super}, mouse_up, workspace, e-1"
       ];
       # Move/resize windows with mainMod + LMB/RMB and dragging
-      bindm =  [
+      bindm = [
         "${super}, mouse:272, movewindow"
         "${super}, mouse:273, resizewindow"
       ];

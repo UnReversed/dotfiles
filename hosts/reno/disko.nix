@@ -1,9 +1,9 @@
 {
   disko.devices = {
     disk = {
-      sda = {
+      nvme1n1 = {
         type = "disk";
-        device = "/dev/sda";
+        device = "/dev/nvme1n1";
         content = {
           type = "gpt";
           partitions = {
@@ -28,6 +28,23 @@
                 type = "filesystem";
                 format = "ext4";
                 mountpoint = "/";
+              };
+            };
+          };
+        };
+      };
+      nvme0n1 = {
+        type = "disk";
+        device = "/dev/nvme0n1";
+        content = {
+          type = "gpt";
+          partitions = {
+            media = {
+              size = "100%";
+              content = {
+                type = "filesystem";
+                format = "ext4";
+                mountpoint = "/media";
               };
             };
           };

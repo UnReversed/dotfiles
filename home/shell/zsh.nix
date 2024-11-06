@@ -1,7 +1,4 @@
-{
-  ...
-}:
-{
+{...}: {
   programs = {
     zsh = {
       enable = true;
@@ -12,7 +9,7 @@
       syntaxHighlighting.enable = true;
       oh-my-zsh = {
         enable = true;
-        plugins = [ "git" ];
+        plugins = ["git"];
         theme = "gnzh";
       };
     };

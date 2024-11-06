@@ -15,22 +15,47 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, disko, ... }@inputs: {
+  outputs = {
+    nixpkgs,
+    home-manager,
+    disko,
+    ...
+  } @ inputs: {
     nixosConfigurations = {
       test = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs;};
+        specialArgs = {inherit inputs;};
         modules = [
           ./hosts/test/configuration.nix
           disko.nixosModules.disko
-          home-manager.nixosModules.home-manager {
+          home-manager.nixosModules.home-manager
+          {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              extraSpecialArgs = { 
-                inherit inputs; 
+              extraSpecialArgs = {
+                inherit inputs;
               };
               users.test = import ./home/home.nix;
+            };
+          }
+        ];
+      };
+      reno = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/reno/configuration.nix
+          disko.nixosModules.disko
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = {
+                inherit inputs;
+              };
+              users.unreversed = import ./home/home-unreversed.nix;
             };
           }
         ];
