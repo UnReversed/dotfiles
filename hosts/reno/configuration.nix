@@ -69,6 +69,7 @@
     swww
     alacritty
     rofi-wayland
+    networkmanagerapplet
   ];
   programs.zsh.enable = true;
   programs.neovim.enable = true;
