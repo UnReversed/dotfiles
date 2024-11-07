@@ -21,7 +21,7 @@
         ];
         modules-center = [
           "custom/left2"
-          # "custom/cpuinfo"
+          "tray"
 
           "custom/left3"
           "memory"
@@ -43,6 +43,7 @@
 
           # "custom/wi"
           # "custom/wifi"
+          "network"
           "custom/right5"
         ];
         modules-right = [
@@ -125,6 +126,24 @@
         "custom/os-logo" = {
           format = " ";
           tooltip = false;
+        };
+
+        tray = {
+          icon-size = 5;
+          max-length = 20;
+          min-length = 20;
+        };
+
+        "network" = {
+          format = "{ifname}";
+          format-wifi = "{essid} ({signalStrength}%)  ";
+          format-ethernet = "{ipaddr}/{cidr} 󰊗 ";
+          tooltip-format = "{ifname} via {gwaddr} 󰊗 ";
+          tooltip-format-wifi = "{essid} ({signalStrength}%)  ";
+          tooltip-format-ethernet = "{ifname}  ";
+          tooltip-format-disconnected = "Disconnected";
+          max-length = 20;
+          min-length = 20;
         };
 
         "clock#time" = {

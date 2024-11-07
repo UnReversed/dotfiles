@@ -268,7 +268,7 @@ tooltip {
     padding-left: 5px;
 }
 
-#custom-wifi {
+#network {
     background: @wifi;
     padding-right: 0px;
     padding-left: 0px;
