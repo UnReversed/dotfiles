@@ -129,7 +129,6 @@
         };
 
         tray = {
-          icon-size = 5;
           max-length = 20;
           min-length = 20;
         };

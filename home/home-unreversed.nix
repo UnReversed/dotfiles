@@ -14,7 +14,7 @@
   gtk = {
     enable = true;
     theme = {
-      name = "adwaita-dark";
+      name = "Adwaita-dark";
       package = pkgs.gnome-themes-extra;
     };
     iconTheme = {
