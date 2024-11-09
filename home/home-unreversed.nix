@@ -9,6 +9,7 @@
     ./editors
     ./containers.nix
     ./hyper
+    ./browser
   ];
 
   gtk = {
