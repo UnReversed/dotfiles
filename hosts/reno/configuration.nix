@@ -20,6 +20,12 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   hardware.graphics.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
+  services.blueman.enable = true;
 
   networking.hostName = "reno"; # Define your hostname.
   # Pick only one of the below networking options.

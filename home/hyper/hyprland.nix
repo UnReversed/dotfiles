@@ -2,8 +2,10 @@
   super = "SUPER";
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.waybar}/bin/waybar &
-    ${pkgs.dunst}/bin/dunst
-    ${pkgs.udiskie}/bin/udiskie -sn
+    ${pkgs.dunst}/bin/dunst &
+    ${pkgs.udiskie}/bin/udiskie -sn &
+    ${pkgs.blueman}/bin/blueman-applet &
+    ${pkgs.networkmanagerapplet}/bin/nm-applet &
   '';
 in {
   wayland.windowManager.hyprland = {
