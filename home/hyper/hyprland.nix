@@ -3,17 +3,20 @@
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.waybar}/bin/waybar &
     ${pkgs.dunst}/bin/dunst
+    ${pkgs.udiskie}/bin/udiskie -sn
   '';
 in {
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       monitor = [
+        "desc:BOE 0x0B8E,1920x1080@60.0,1600x1440,1.0"
+        "desc:LG Electronics LG ULTRAGEAR 401NTCZ6T187,2560x1440,2560x0,1"
+        "desc:LG Electronics LG ULTRAGEAR 312NTCZ8P275,2560x1440,0x0,1"
         "HDMI-A-1, 2160x1440@60, 0x0, 1"
-        "eDP-1, 1920x1080, 0x0 ,1"
         ",preferred,auto,auto"
-        "Unknown-1 , disable"
       ];
+
 
       env = [
         "XCURSOR_SIZE,24"
@@ -106,6 +109,11 @@ in {
           name = "epic-mouse-v1";
           sensitivity = -0.5;
         }
+      ];
+
+      workspace = [
+        "2, monitor:desc:LG Electronics LG ULTRAGEAR 312NTCZ8P275, default:true"
+        "3, monitor:desc:LG Electronics LG ULTRAGEAR 401NTCZ6T187, default:true"
       ];
 
       # Example windowrule v1
