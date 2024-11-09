@@ -14,5 +14,7 @@
     nwg-displays 
 
     pavucontrol
+    
+    dolphin
   ];
 }
