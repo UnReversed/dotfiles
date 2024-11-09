@@ -194,6 +194,8 @@
             headphone = "󰋋";
             default = ["󰖀" "󰕾"];
           };
+          on-click = "wpctl set-mute @DEFAULT_SINK@ toggle";
+          on-click-right = "pavucontrol";
           # "on-click" = "~/.config/waybar/scripts/volumecontrol.sh -o m";
           # "on-click-right" = "pavucontrol -t 3";
           # "on-scroll-up" = "~/.config/waybar/scripts/volumecontrol.sh -o i";
