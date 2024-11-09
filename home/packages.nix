@@ -12,9 +12,10 @@
 
     # gui to better visualize hyprland posiotns of monitors
     nwg-displays 
+    breeze-icons
 
     pavucontrol
-    
+
     dolphin
   ];
 }
