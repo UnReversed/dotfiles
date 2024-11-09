@@ -11,6 +11,7 @@
     ../../modules/security
     ../../modules/remote-desktop
     ../../modules/audio
+    ../../modules/tmp
     ./disko.nix
   ];
 
