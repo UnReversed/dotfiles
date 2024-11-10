@@ -16,18 +16,13 @@
                 mountpoint = "/boot";
               };
             };
-            swap = {
-              size = "8G";
-              content = {
-                type = "swap";
-              };
-            };
-            nixos = {
+            crypted1 = {
               size = "100%";
               content = {
-                type = "filesystem";
-                format = "ext4";
-                mountpoint = "/";
+                type = "luks";
+                name = "crypted1";
+                passwordFile = "/tmp/secret.key";
+                settings.allowDiscards = true;
               };
             };
           };
@@ -39,12 +34,41 @@
         content = {
           type = "gpt";
           partitions = {
-            media = {
+            swap = {
+              size = "8G";
+              content = {
+                type = "swap";
+              };
+            };
+            crypted2 = {
               size = "100%";
               content = {
-                type = "filesystem";
-                format = "ext4";
-                mountpoint = "/media";
+                type = "luks";
+                name = "crypted2";
+                passwordFile = "/tmp/secret.key";
+                settings.allowDiscards = true;
+                content = {
+                  type = "btrfs";
+                  extraArgs = [
+                    "-m raid1"
+                    "-d single"
+                    "/dev/mapper/crypted1"
+                  ];
+                  subvolumes = {
+                    "/root" = {
+                      mountpoint = "/";
+                      mountOptions = [ "compress=zstd" "noatime" ];
+                    };
+                    "/home" = {
+                      mountpoint = "/home";
+                      mountOptions = [ "compress=zstd" "noatime" ];
+                    };
+                    "/nix" = {
+                      mountpoint = "/nix";
+                      mountOptions = [ "compress=zstd" "noatime" ];
+                    };
+                  };
+                };
               };
             };
           };
