@@ -12,6 +12,21 @@
 
       jnoortheen.nix-ide
       mhutchie.git-graph
+      kamadorueda.alejandra
     ];
+    userSettings = {
+      "nix.enableLanguageServer" = true;
+      "nix.serverPath" = "nixd";
+      "nix.serverSettings" = {
+        "nixd" = {
+          "options" = {
+            "nixos" = {
+              "expr" = "(builtins.getFlake \"github:unreversed/dotfiles\").nixosConfigurations.reno.options";
+            };
+          };
+        };
+      };
+      "nix.formatterPath" = "alejandra";
+    };
   };
 }
