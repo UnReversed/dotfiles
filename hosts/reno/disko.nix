@@ -1,33 +1,6 @@
 {
   disko.devices = {
     disk = {
-      nvme1n1 = {
-        type = "disk";
-        device = "/dev/nvme1n1";
-        content = {
-          type = "gpt";
-          partitions = {
-            ESP = {
-              size = "500M";
-              type = "EF00";
-              content = {
-                type = "filesystem";
-                format = "vfat";
-                mountpoint = "/boot";
-              };
-            };
-            crypted1 = {
-              size = "100%";
-              content = {
-                type = "luks";
-                name = "crypted1";
-                passwordFile = "/tmp/secret.key";
-                settings.allowDiscards = true;
-              };
-            };
-          };
-        };
-      };
       nvme0n1 = {
         type = "disk";
         device = "/dev/nvme0n1";
@@ -40,12 +13,40 @@
                 type = "swap";
               };
             };
+            crypted1 = {
+              size = "100%";
+              content = {
+                type = "luks";
+                name = "crypted1";
+                #passwordFile = "/tmp/secret.key";
+                settings.allowDiscards = true;
+              };
+            };
+          };
+        };
+      };
+      nvme1n1 = {
+        type = "disk";
+        device = "/dev/nvme1n1";
+        content = {
+          type = "gpt";
+          partitions = {
+            ESP = {
+              size = "512M";
+              type = "EF00";
+              content = {
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+                mountOptions = [ "umask=0077" ];
+              };
+            };
             crypted2 = {
               size = "100%";
               content = {
                 type = "luks";
                 name = "crypted2";
-                passwordFile = "/tmp/secret.key";
+                #passwordFile = "/tmp/secret.key";
                 settings.allowDiscards = true;
                 content = {
                   type = "btrfs";
