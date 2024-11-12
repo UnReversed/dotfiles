@@ -22,6 +22,7 @@
         "wheel"
         "docker"
         "networkmanager"
+        "tss"
       ];
       shell = pkgs.zsh;
       packages = with pkgs; [
