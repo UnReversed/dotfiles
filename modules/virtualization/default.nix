@@ -1,8 +1,9 @@
-{pkgs, ...}: {
+{...}: {
   virtualisation = {
     docker = {
       enable = true;
       enableOnBoot = true;
+      storageDriver = "btrfs";
       liveRestore = true;
       autoPrune.enable = true;
       daemon.settings = {
@@ -11,18 +12,9 @@
     };
     libvirtd = {
       enable = true;
-
-      qemu.RunAsRoot = true;
+      qemu.runAsRoot = true;
     };
-
-    lxc.enable = true;
   };
 
   programs.virt-manager.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    virt-viewer
-
-    qemu_kvm
-  ];
 }
