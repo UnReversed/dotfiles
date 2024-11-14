@@ -2,7 +2,6 @@
   home.packages = with pkgs; [
     # nix LSP
     nixd
-    neofetch
 
     du-dust
     # nix formatter
@@ -11,11 +10,12 @@
     udiskie
 
     # gui to better visualize hyprland posiotns of monitors
-    nwg-displays 
+    nwg-displays
     breeze-icons
 
     pavucontrol
 
     dolphin
+    networkmanagerapplet
   ];
 }

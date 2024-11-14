@@ -3,6 +3,7 @@
     kubectl
     docker-compose
 
+    kubecolor
     fluxcd
     helm
   ];

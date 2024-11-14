@@ -13,6 +13,7 @@
       jnoortheen.nix-ide
       mhutchie.git-graph
       kamadorueda.alejandra
+      mkhl.direnv
     ];
     userSettings = {
       "nix.enableLanguageServer" = true;

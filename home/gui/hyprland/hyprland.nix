@@ -3,7 +3,6 @@
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.waybar}/bin/waybar &
     ${pkgs.dunst}/bin/dunst &
-    ${pkgs.udiskie}/bin/udiskie -sn &
     ${pkgs.blueman}/bin/blueman-applet &
     ${pkgs.networkmanagerapplet}/bin/nm-applet &
   '';
@@ -18,7 +17,6 @@ in {
         "HDMI-A-1, 2160x1440@60, 0x0, 1"
         ",preferred,auto,auto"
       ];
-
 
       env = [
         "XCURSOR_SIZE,24"

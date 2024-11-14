@@ -1,9 +1,8 @@
-{...}:
-let 
+{...}: let
   Pictures = "Pictures/wallpaper";
 in {
   home.file."${Pictures}" = {
-    source = ../../assets;
+    source = ../../../assets;
     recursive = true;
     target = Pictures;
   };

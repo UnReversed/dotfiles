@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    azure-cli
-    azuredatastudio
+    terraform
+    opentofu
+    terramate
   ];
 }
