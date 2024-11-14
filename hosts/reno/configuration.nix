@@ -5,10 +5,9 @@
     ./disko.nix
 
     ../../modules/base
-    ../../modules/remote-desktop
     ../../modules/virtualization
-    ../../modules/bluetooth
     ../../modules/wayland
+    ../../modules/laptop
   ];
 
   security.tpm2.enable = true;

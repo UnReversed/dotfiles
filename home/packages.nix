@@ -17,5 +17,11 @@
 
     dolphin
     networkmanagerapplet
+
+    remmina
+    freerdp
+
+    keepassxc
+    rclone
   ];
 }
