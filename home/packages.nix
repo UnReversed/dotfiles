@@ -23,5 +23,9 @@
 
     keepassxc
     rclone
+    rambox
+
+    networkmanager-openvpn
+    openvpn3
   ];
 }
