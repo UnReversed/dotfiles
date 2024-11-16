@@ -1,4 +1,8 @@
 {
+  imports = [
+    ./bluetooth.nix
+  ];
+
   services.auto-cpufreq = {
     enable = true;
     settings = {
