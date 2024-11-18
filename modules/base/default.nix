@@ -8,7 +8,6 @@
     ./shell
     ./ssh
     ./users
-    ./qtTheme.nix
   ];
 
   services = {

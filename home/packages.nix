@@ -15,7 +15,6 @@
 
     pavucontrol
 
-    dolphin
     networkmanagerapplet
 
     remmina

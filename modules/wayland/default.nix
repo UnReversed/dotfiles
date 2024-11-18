@@ -2,7 +2,16 @@
   programs = {
     hyprland.enable = true;
     hyprlock.enable = true;
+    thunar = {
+      enable = true;
+      plugins = with pkgs.xfce; [
+        thunar-archive-plugin
+        thunar-volman
+      ];
+    };
   };
+
+  services.gvfs.enable = true;
 
   services = {
     hypridle.enable = true;
