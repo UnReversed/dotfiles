@@ -5,7 +5,7 @@
 
     kubecolor
     fluxcd
-    helm
+    kubernetes-helm
   ];
 
   programs = {
