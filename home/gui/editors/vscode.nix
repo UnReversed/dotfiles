@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: let
+  extension = inputs.nix-vscode-extensions.extensions.x86_64-linux.vscode-marketplace;
+in {
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;
@@ -9,9 +15,9 @@
       ms-vscode-remote.remote-containers
       ms-azuretools.vscode-docker
       ms-kubernetes-tools.vscode-kubernetes-tools
-      # https://github.com/nix-community/nix-vscode-extensions
-      # ms-kubernetes-tools.vscode-aks-tools
-      # eamodio.gitlens
+
+      extension.ms-kubernetes-tools.vscode-aks-tools
+      extension.eamodio.gitlens
 
       jnoortheen.nix-ide
       mhutchie.git-graph
