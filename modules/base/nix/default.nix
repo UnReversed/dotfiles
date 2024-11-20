@@ -1,12 +1,19 @@
-{pkgs,inputs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   nix = {
-    
-    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+    nixPath = ["nixpkgs=${inputs.nixpkgs}"];
     settings = {
       experimental-features = ["nix-command" "flakes"];
 
       auto-optimise-store = true;
       sandbox = true;
+
+      trusted-users = [
+        "@wheel"
+      ];
 
       substituters = [
         "https://cache.nixos.org"
