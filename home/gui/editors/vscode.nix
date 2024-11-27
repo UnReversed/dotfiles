@@ -23,8 +23,15 @@ in {
       mhutchie.git-graph
       kamadorueda.alejandra
       mkhl.direnv
+      ms-python.python
+      extension.azure-automation.vscode-azureautomation
+      extension.ms-vscode.azure-account
+      ms-vscode.powershell
     ];
     userSettings = {
+      "editor.fontFamily" = "'Hack Nerd Font','Droid Sans Mono', 'monospace'";
+      "terminal.integrated.fontFamily" = "'Hack Nerd Font'";
+      "terminal.integrated.enableImages" = true;
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "nixd";
       "nix.serverSettings" = {
