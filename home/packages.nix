@@ -26,5 +26,6 @@
 
     networkmanager-openvpn
     openvpn3
+    devenv
   ];
 }
