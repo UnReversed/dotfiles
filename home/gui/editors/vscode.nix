@@ -27,6 +27,7 @@ in {
       extension.azure-automation.vscode-azureautomation
       extension.ms-vscode.azure-account
       ms-vscode.powershell
+      pkief.material-icon-theme
     ];
     userSettings = {
       "editor.fontFamily" = "'Hack Nerd Font','Droid Sans Mono', 'monospace'";
@@ -44,6 +45,8 @@ in {
         };
       };
       "nix.formatterPath" = "alejandra";
+      "workbench.colorTheme" = "Default Dark+";
+      "workbench.iconTheme" = "material-icon-theme";
     };
   };
 }
