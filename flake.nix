@@ -29,6 +29,11 @@
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    auto-cpufreq = {
+      url = "github:AdnanHodzic/auto-cpufreq";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -36,6 +41,7 @@
     home-manager,
     disko,
     lanzaboote,
+    auto-cpufreq,
     ...
   } @ inputs: let
     specialArgs = {inherit inputs;};
@@ -71,6 +77,7 @@
           [
             ./hosts/reno/configuration.nix
             lanzaboote.nixosModules.lanzaboote
+            auto-cpufreq.nixosModules.default
           ]
           ++ modules;
       };
