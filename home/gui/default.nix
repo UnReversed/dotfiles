@@ -4,5 +4,6 @@
     ./gtk
     ./hyprland
     ./editors
+    ./packages.nix
   ];
 }
