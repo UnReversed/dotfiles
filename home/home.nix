@@ -1,8 +1,9 @@
-{...}: {
+{inputs, ...}: {
   home.username = "unreversed";
   home.homeDirectory = "/home/unreversed";
 
   imports = [
+    inputs.nix-index-database.hmModules.nix-index
     ./core
     ./gui
 

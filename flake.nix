@@ -34,6 +34,10 @@
       url = "github:AdnanHodzic/auto-cpufreq";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -42,11 +46,13 @@
     disko,
     lanzaboote,
     auto-cpufreq,
+    nix-index-database,
     ...
   } @ inputs: let
     specialArgs = {inherit inputs;};
     modules = [
       disko.nixosModules.disko
+      nix-index-database.nixosModules.nix-index
       home-manager.nixosModules.home-manager
       {
         home-manager = {

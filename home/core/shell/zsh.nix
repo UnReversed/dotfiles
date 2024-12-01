@@ -12,6 +12,9 @@
         plugins = ["git"];
         theme = "gnzh";
       };
+      shellAliases = {
+        cd = "z";
+      };
     };
     zoxide = {
       enable = true;
