@@ -5,5 +5,6 @@
     ./ssh.nix
     ./fastfetch.nix
     ./tools.nix
+    ./editors
   ];
 }

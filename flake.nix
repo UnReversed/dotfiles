@@ -31,12 +31,17 @@
     };
 
     auto-cpufreq = {
-      url = "github:AdnanHodzic/auto-cpufreq";
+      url = "github:AdnanHodzic/auto-cpufreq/18a3a93f62f2572bc8ed8e953d09dca4a87da9bc";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
   };
 
@@ -47,6 +52,7 @@
     lanzaboote,
     auto-cpufreq,
     nix-index-database,
+    nixvim,
     ...
   } @ inputs: let
     specialArgs = {inherit inputs;};
