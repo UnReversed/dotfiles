@@ -21,5 +21,4 @@
     wget
     git
   ];
-  programs.neovim.enable = true;
 }

@@ -27,5 +27,15 @@
     networkmanager-openvpn
     openvpn3
     devenv
+    distrobox
+    kitty
+    grim
   ];
+
+  services.flameshot = {
+    enable = true;
+    package = pkgs.flameshot.override {
+      enableWlrSupport = true;
+    };
+  };
 }

@@ -116,6 +116,10 @@ in {
       # Example windowrule v2
       # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
       # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
+      windowrule = [
+        "suppressevent fullscreen,flameshot"
+        "float,flameshot"
+      ];
 
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
       # $mainMod = SUPER
