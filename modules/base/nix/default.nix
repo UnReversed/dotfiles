@@ -31,11 +31,14 @@
     };
   };
 
+  programs.nixvim = {
+    enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
     nvd
     nix-output-monitor
   ];
-
   programs.nh = {
     enable = true;
     clean = {

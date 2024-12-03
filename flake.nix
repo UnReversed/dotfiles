@@ -41,11 +41,11 @@
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
     };
   };
 
   outputs = {
+    self,
     nixpkgs,
     home-manager,
     disko,
@@ -55,17 +55,18 @@
     nixvim,
     ...
   } @ inputs: let
-    specialArgs = {inherit inputs;};
+    specialArgs = {inherit inputs self;};
     modules = [
       disko.nixosModules.disko
       nix-index-database.nixosModules.nix-index
+      nixvim.nixosModules.nixvim
       home-manager.nixosModules.home-manager
       {
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
           extraSpecialArgs = {
-            inherit inputs;
+            inherit inputs self;
           };
           users.unreversed = import ./home/home.nix;
         };
