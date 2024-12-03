@@ -53,20 +53,24 @@
     auto-cpufreq,
     nix-index-database,
     nixvim,
+    self,
     ...
   } @ inputs: let
-    specialArgs = {inherit inputs;};
+    specialArgs = {inherit inputs self;};
     modules = [
       disko.nixosModules.disko
-      nix-index-database.nixosModules.nix-index
       home-manager.nixosModules.home-manager
       {
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
           extraSpecialArgs = {
-            inherit inputs;
+            inherit inputs self;
           };
+          sharedModules = [
+            nixvim.homeManagerModules.nixvim
+            nix-index-database.hmModules.nix-index
+          ];
           users.unreversed = import ./home/home.nix;
         };
       }
