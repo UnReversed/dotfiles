@@ -3,8 +3,6 @@
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.waybar}/bin/waybar &
     ${pkgs.dunst}/bin/dunst &
-    ${pkgs.blueman}/bin/blueman-applet &
-    ${pkgs.networkmanagerapplet}/bin/nm-applet &
   '';
 in {
   wayland.windowManager.hyprland = {
@@ -116,10 +114,21 @@ in {
       # Example windowrule v2
       # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
       # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-      windowrule = [
-        "suppressevent fullscreen,flameshot"
-        "float,flameshot"
+      windowrulev2 = [
+        "noanim, class:^(flameshot)$"
+        "noinitialfocus, class:^(flameshot)$"
+        "move 0 0,class:^(flameshot)$"
+        "float, class:^(flameshot)$"
+        "suppressevent fullscreen,class:^(flameshot)$"
+        "stayfocused,class:^(flameshot)$"
+        "noborder,class:^(flameshot)$"
+        "pin, class:^(flameshot)$"
+        "monitor 0, class:^(flameshot)$"
       ];
+      # windowrule = [
+      #   "suppressevent fullscreen,flameshot"
+      #   "float,flameshot"
+      # ];
 
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
       # $mainMod = SUPER

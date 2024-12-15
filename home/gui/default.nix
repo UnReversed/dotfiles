@@ -5,5 +5,6 @@
     ./hyprland
     ./editors
     ./packages.nix
+    ./tools.nix
   ];
 }
