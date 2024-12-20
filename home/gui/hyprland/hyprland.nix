@@ -123,7 +123,7 @@ in {
         "stayfocused,class:^(flameshot)$"
         "noborder,class:^(flameshot)$"
         "pin, class:^(flameshot)$"
-        "monitor 0, class:^(flameshot)$"
+        "monitor 2, class:^(flameshot)$"
       ];
       # windowrule = [
       #   "suppressevent fullscreen,flameshot"
@@ -144,6 +144,7 @@ in {
         "${super}, L, exec, pidof hyprlock || hyprlock --immediate"
         "${super}, P, pseudo" # dwindle
         "${super}, J, togglesplit" # dwindle
+        "${super}, Print, exec, flameshot gui" # dwindle
 
         # Move focus with mainMod + arrow keys
         "${super}, left, movefocus, l"
