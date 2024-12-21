@@ -2,7 +2,7 @@
   inputs,
   pkgs,
   ...
-}:let
+}: let
   addons = inputs.firefox-addons.packages.${pkgs.system};
 in {
   programs.firefox = {
@@ -67,8 +67,8 @@ in {
         clearurls
         buster-captcha-solver
         keepassxc-browser
+        localcdn
       ];
-    }; 
+    };
   };
-
 }

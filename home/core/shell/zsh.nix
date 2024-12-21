@@ -28,5 +28,8 @@
       enable = true;
       enableZshIntegration = true;
     };
+    nix-your-shell = {
+      enable = true;
+    };
   };
 }

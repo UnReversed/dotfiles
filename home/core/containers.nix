@@ -3,7 +3,6 @@
     kubectl
     docker-compose
 
-    kubecolor
     fluxcd
     kubernetes-helm
   ];
@@ -11,6 +10,10 @@
   programs = {
     k9s = {
       enable = true;
+    };
+    kubecolor = {
+      enable = true;
+      enableAlias = true;
     };
   };
 }
