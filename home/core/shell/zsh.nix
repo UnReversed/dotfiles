@@ -31,5 +31,8 @@
     nix-your-shell = {
       enable = true;
     };
+    pay-respects = {
+      enable = true;
+    };
   };
 }
