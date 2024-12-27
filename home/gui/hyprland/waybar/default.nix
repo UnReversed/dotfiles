@@ -1,8 +1,10 @@
-{...}: {
+{lib, ...}: {
+  systemd.user.services.waybar.Unit.After = lib.mkForce "graphical-session.target";
   # Config inspired *ekchem* stolen *ekchem* from https://github.com/Sejjy/MechaBar/tree/626ed38662f18a7a44cb624a5b7a81ad0bbb17a8
   programs.waybar = {
     enable = true;
     style = ./style.css;
+    systemd.enable = true;
     settings = {
       mainBar = {
         layer = "top";

@@ -1,12 +1,9 @@
-{pkgs, ...}: let
+{...}: let
   super = "SUPER";
-  startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-    ${pkgs.waybar}/bin/waybar &
-    ${pkgs.dunst}/bin/dunst &
-  '';
 in {
   wayland.windowManager.hyprland = {
     enable = true;
+    systemd.enable = false;
     settings = {
       monitor = [
         "desc:BOE 0x0B8E,1920x1080@60.0,1600x1440,1.0"
@@ -135,7 +132,7 @@ in {
 
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
       bind = [
-        "${super}, Q, exec, alacritty"
+        "${super}, Q, exec, uwsm app -- alacritty"
         "${super}, C, killactive"
         "${super}, M, exit"
         "${super}, E, exec, dolphin"
@@ -189,8 +186,6 @@ in {
         "${super}, mouse:272, movewindow"
         "${super}, mouse:273, resizewindow"
       ];
-
-      exec-once = ''${startupScript}/bin/start'';
     };
   };
 }

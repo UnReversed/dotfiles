@@ -6,5 +6,6 @@
     ./editors
     ./packages.nix
     ./tools.nix
+    ./rofi.nix
   ];
 }

@@ -1,4 +1,11 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
+  home.packages = with pkgs; [
+    networkmanager-openvpn
+  ];
   services = {
     flameshot = {
       enable = true;
@@ -11,4 +18,5 @@
     # udisks2 pop-up
     udiskie.enable = true;
   };
+  systemd.user.services.blueman-applet.Unit.After = lib.mkForce "graphical-session.target";
 }

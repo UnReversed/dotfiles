@@ -1,6 +1,9 @@
 {pkgs, ...}: {
   programs = {
-    hyprland.enable = true;
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+    };
     hyprlock.enable = true;
     thunar = {
       enable = true;
@@ -19,7 +22,7 @@
       enable = true;
       settings = {
         default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --time --asterisks --cmd Hyprland --theme border=blue;container=black;prompt=green;input=red";
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --time --asterisks --remember-session --theme border=blue;container=black;prompt=green;input=red";
           user = "greeter";
         };
       };
@@ -30,6 +33,6 @@
   environment.systemPackages = with pkgs; [
     dunst
     alacritty
-    rofi-wayland
+    # rofi-wayland
   ];
 }
