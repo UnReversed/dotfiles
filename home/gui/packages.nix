@@ -1,13 +1,9 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     ueberzugpp
     grim
 
-    inputs.ghostty.packages.x86_64-linux.default
+    ghostty
     # gui to better visualize hyprland posiotns of monitors
     nwg-displays
 
