@@ -12,8 +12,12 @@
         plugins = ["git" "terraform"];
         theme = "gnzh";
       };
+      initExtraBeforeCompInit = ''
+        compdef kubecolor=kubectl
+      '';
       shellAliases = {
         cd = "z";
+        cat = "bat";
       };
     };
     zoxide = {
@@ -32,6 +36,12 @@
       enable = true;
     };
     pay-respects = {
+      enable = true;
+    };
+    bat = {
+      enable = true;
+    };
+    ripgrep = {
       enable = true;
     };
   };
