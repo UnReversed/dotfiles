@@ -29,10 +29,4 @@
       vt = 2;
     };
   };
-
-  environment.systemPackages = with pkgs; [
-    dunst
-    alacritty
-    # rofi-wayland
-  ];
 }

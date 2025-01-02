@@ -132,7 +132,7 @@ in {
 
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
       bind = [
-        "${super}, Q, exec, uwsm app -- alacritty"
+        "${super}, Q, exec, uwsm app -- ghostty"
         "${super}, C, killactive"
         "${super}, M, exit"
         "${super}, E, exec, dolphin"
