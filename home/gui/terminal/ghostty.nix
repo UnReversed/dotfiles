@@ -7,7 +7,7 @@
       font-family = "{{ terminal_font }}";
       theme = "Dark+";
       window-theme = "dark";
-      #window-decoration = false
+      window-decoration = false;
     };
   };
 }
