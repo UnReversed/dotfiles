@@ -11,5 +11,6 @@
 
     rambox
     keepassxc
+    libsForQt5.ark
   ];
 }
