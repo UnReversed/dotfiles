@@ -3,6 +3,8 @@
     ./lsp
     ./telescope.nix
     ./treesitter.nix
+    ./cmp.nix
+    ./opts.nix
   ];
 
   programs.nixvim = {
@@ -13,6 +15,7 @@
       yazi = {
         enable = true;
       };
+      which-key.enable = true;
     };
   };
 }
