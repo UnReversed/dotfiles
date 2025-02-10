@@ -25,8 +25,8 @@ in {
       kamadorueda.alejandra
       mkhl.direnv
       ms-python.python
-      extension.azure-automation.vscode-azureautomation
-      extension.ms-vscode.azure-account
+      extension.ms-azuretools.vscode-azureresourcegroups
+      extension.ms-mssql.mssql
       ms-vscode.powershell
       pkief.material-icon-theme
     ];
