@@ -15,12 +15,13 @@
     };
 
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.1";
+      url = "github:nix-community/lanzaboote/v0.4.2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # inspired by https://github.com/Misterio77/nix-config/blob/637e5f350a1f82ad2cd3da2a8a028ebf9f39b02e/flake.nix#L45
     firefox-addons = {
+      # url = "gitlab:rycee/nur-expressions/79a77a7d0b22e82d52a90055cc8206447ab85285?dir=pkgs/firefox-addons";
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
