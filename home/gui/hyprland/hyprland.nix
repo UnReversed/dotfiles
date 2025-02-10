@@ -104,6 +104,10 @@ in {
       workspace = [
         "2, monitor:desc:LG Electronics LG ULTRAGEAR 312NTCZ8P275, default:true"
         "3, monitor:desc:LG Electronics LG ULTRAGEAR 401NTCZ6T187, default:true"
+
+        #work
+        "2, monitor:desc:Dell Inc. DELL U2414H 292K473P079L, default:true"
+        "3, monitor:desc:Dell Inc. DELL U2414H 292K476D1KHL, default:true"
       ];
 
       # Example windowrule v1
