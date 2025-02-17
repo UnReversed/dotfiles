@@ -14,7 +14,10 @@
   boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "vmd" "nvme" "uas" "sd_mod" "rtsx_pci_sdmmc"];
   boot.initrd.kernelModules = ["xe"];
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelParams = ["xe.force_probe=7d55"];
+  boot.kernelParams = [
+    "xe.force_probe=7d55"
+    "i915.enable_psr=0"
+  ];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
 
