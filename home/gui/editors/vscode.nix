@@ -19,6 +19,10 @@ in {
 
       extension.ms-kubernetes-tools.vscode-aks-tools
       extension.eamodio.gitlens
+      extension.ms-azure-devops.azure-pipelines
+      extension.christopherhx.azure-pipelines-vscode-ext
+
+      extension.hashicorp.terraform
 
       jnoortheen.nix-ide
       mhutchie.git-graph
