@@ -6,7 +6,7 @@
     du-dust
     # nix formatter
     alejandra
-    breeze-icons
+    kdePackages.breeze-icons
 
     pavucontrol
 

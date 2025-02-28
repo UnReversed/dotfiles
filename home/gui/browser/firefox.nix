@@ -56,19 +56,67 @@ in {
           ];
         }
       ];
-
-      extensions = with addons; [
-        multi-account-containers
-        ublock-origin
-        darkreader
-        sponsorblock
-        return-youtube-dislikes
-        consent-o-matic
-        clearurls
-        buster-captcha-solver
-        keepassxc-browser
-        localcdn
-      ];
+      extensions = {
+        force = true;
+        packages = with addons; [
+          multi-account-containers
+          ublock-origin
+          darkreader
+          sponsorblock
+          return-youtube-dislikes
+          consent-o-matic
+          clearurls
+          buster-captcha-solver
+          keepassxc-browser
+          localcdn
+        ];
+        settings."uBlock0@raymondhill.net".settings = {
+          selectedFilterLists = [
+            "user-filters"
+            "ublock-filters"
+            "ublock-badware"
+            "ublock-privacy"
+            "ublock-quick-fixes"
+            "ublock-unbreak"
+            "easylist"
+            "adguard-generic"
+            "adguard-mobile"
+            "easyprivacy"
+            "adguard-spyware"
+            "adguard-spyware-url"
+            "block-lan"
+            "urlhaus-1"
+            "curben-phishing"
+            "plowe-0"
+            "dpollock-0"
+            "fanboy-cookiemonster"
+            "ublock-cookies-easylist"
+            "adguard-cookies"
+            "ublock-cookies-adguard"
+            "fanboy-social"
+            "adguard-social"
+            "fanboy-thirdparty_social"
+            "easylist-chat"
+            "easylist-newsletters"
+            "easylist-notifications"
+            "easylist-annoyances"
+            "adguard-mobile-app-banners"
+            "adguard-other-annoyances"
+            "adguard-popup-overlays"
+            "adguard-widgets"
+            "ublock-annoyances"
+            "POL-0"
+            "POL-2"
+          ];
+          whitelist = [
+            "chrome-extension-scheme"
+            "moz-extension-scheme"
+            "portal.azure.com"
+          ];
+          dynamicFilteringString = "behind-the-scene * * noop\nbehind-the-scene * inline-script noop\nbehind-the-scene * 1p-script noop\nbehind-the-scene * 3p-script noop\nbehind-the-scene * 3p-frame noop\nbehind-the-scene * image noop\nbehind-the-scene * 3p noop";
+          hostnameSwitchesString = "no-large-media: behind-the-scene false\nno-csp-reports: * true";
+        };
+      };
     };
   };
 }
