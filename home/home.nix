@@ -22,7 +22,4 @@
     homeDirectory = "/home/unreversed";
     stateVersion = "23.11";
   };
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
 }
