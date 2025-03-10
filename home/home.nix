@@ -1,7 +1,4 @@
 {...}: {
-  home.username = "unreversed";
-  home.homeDirectory = "/home/unreversed";
-
   imports = [
     ./core
     ./gui
@@ -17,7 +14,15 @@
       color-scheme = "prefer-dark";
     };
   };
-
-  home.stateVersion = "23.11";
-  programs.home-manager.enable = true;
+  programs.home-manager = {
+    enable = true;
+  };
+  home = {
+    username = "unreversed";
+    homeDirectory = "/home/unreversed";
+    stateVersion = "23.11";
+  };
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
 }

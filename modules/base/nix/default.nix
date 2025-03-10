@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  outputs,
   ...
 }: {
   nix = {
@@ -46,8 +47,13 @@
     };
   };
 
-  nixpkgs.config = {
-    allowBroken = false;
-    allowUnfree = true;
+  nixpkgs = {
+    config = {
+      allowBroken = false;
+      allowUnfree = true;
+    };
+    overlays = [
+      outputs.overlays.vscode-packages
+    ];
   };
 }

@@ -55,7 +55,8 @@
     self,
     ...
   } @ inputs: let
-    specialArgs = {inherit inputs self;};
+    inherit (self) outputs;
+    specialArgs = {inherit inputs self outputs;};
     modules = [
       disko.nixosModules.disko
       home-manager.nixosModules.home-manager
@@ -64,7 +65,7 @@
           useGlobalPkgs = true;
           useUserPackages = true;
           extraSpecialArgs = {
-            inherit inputs self;
+            inherit inputs self outputs;
           };
           sharedModules = [
             nixvim.homeManagerModules.nixvim
@@ -75,6 +76,7 @@
       }
     ];
   in {
+    overlays = import ./overlays {inherit inputs;};
     nixosConfigurations = {
       test = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
