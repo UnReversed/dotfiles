@@ -8,8 +8,6 @@
     alejandra
     kdePackages.breeze-icons
 
-    pavucontrol
-
     rclone
 
     openvpn3

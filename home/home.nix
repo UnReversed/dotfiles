@@ -17,6 +17,10 @@
   programs.home-manager = {
     enable = true;
   };
+  programs.nh = {
+    enable = true;
+    flake = "/home/unreversed/nixos";
+  };
   home = {
     username = "unreversed";
     homeDirectory = "/home/unreversed";
