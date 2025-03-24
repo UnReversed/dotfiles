@@ -1,8 +1,4 @@
-{
-  pkgs,
-  self,
-  ...
-}: let
+{pkgs, ...}: let
   extension = pkgs.pkgs-ext.vscode-marketplace;
   shared-extensions = with extension; [
     pkief.material-product-icons
@@ -26,24 +22,10 @@
     redhat.vscode-yaml
     christian-kohler.path-intellisense
   ];
-  shared-userSettings = let
-    nixos = "(builtins.getFlake \"${self}\").nixosConfigurations.reno.options";
-    home-manager = nixos + ".home-manager.users.type.getSubOptions []";
-    nixvim = "(${home-manager}).programs.nixvim.type.getSubOptions [\"programs\" \"nixvim\"]";
-  in {
+  shared-userSettings = {
     "editor.fontFamily" = "'Hack Nerd Font','Droid Sans Mono', 'monospace'";
     "terminal.integrated.fontFamily" = "'Hack Nerd Font'";
     "terminal.integrated.enableImages" = true;
-    "nix.enableLanguageServer" = true;
-    "nix.serverPath" = "nixd";
-    "nix.serverSettings" = {
-      nixd.options = {
-        nixos.expr = nixos;
-        home-manager.expr = home-manager;
-        nixvim.expr = nixvim;
-      };
-    };
-    "nix.formatterPath" = "alejandra";
     "workbench.colorTheme" = "Default Dark+";
     "workbench.iconTheme" = "material-icon-theme";
     "remote.SSH.localServerDownload" = "off";

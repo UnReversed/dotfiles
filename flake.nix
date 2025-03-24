@@ -77,6 +77,7 @@
     ];
   in {
     overlays = import ./overlays {inherit inputs;};
+    devShells."x86_64-linux".default = import ./devshell {inherit inputs;};
     nixosConfigurations = {
       test = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

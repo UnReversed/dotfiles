@@ -6,12 +6,7 @@
     du-dust
     # nix formatter
     alejandra
-    kdePackages.breeze-icons
-
-    rclone
 
     openvpn3
-    devenv
-    distrobox
   ];
 }

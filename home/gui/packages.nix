@@ -9,6 +9,7 @@
     remmina
     freerdp
 
+    kdePackages.breeze-icons
     rambox
     keepassxc
     libsForQt5.ark
