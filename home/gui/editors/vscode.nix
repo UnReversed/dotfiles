@@ -1,27 +1,33 @@
 {pkgs, ...}: let
   extension = pkgs.pkgs-ext.vscode-marketplace;
-  shared-extensions = with extension; [
-    pkief.material-product-icons
-    pkief.material-icon-theme
-    mhutchie.git-graph
-    waderyan.gitblame
-    mkhl.direnv
-    jnoortheen.nix-ide
-    kamadorueda.alejandra
+  shared-extensions = with extension;
+    [
+      pkief.material-product-icons
+      pkief.material-icon-theme
+      mhutchie.git-graph
+      waderyan.gitblame
+      mkhl.direnv
+      jnoortheen.nix-ide
+      kamadorueda.alejandra
 
-    ms-vscode-remote.remote-ssh
-    ms-vscode-remote.remote-ssh-edit
-    ms-vscode.remote-explorer
-    ms-vscode-remote.remote-containers
-    ms-azuretools.vscode-docker
-    ms-kubernetes-tools.vscode-kubernetes-tools
+      # ms-vscode-remote.remote-ssh
+      # ms-vscode-remote.remote-ssh-edit
 
-    ms-kubernetes-tools.vscode-aks-tools
-    ms-azure-devops.azure-pipelines
-    christopherhx.azure-pipelines-vscode-ext
-    redhat.vscode-yaml
-    christian-kohler.path-intellisense
-  ];
+      ms-vscode.remote-explorer
+      ms-vscode-remote.remote-containers
+      ms-azuretools.vscode-docker
+      ms-kubernetes-tools.vscode-kubernetes-tools
+
+      ms-kubernetes-tools.vscode-aks-tools
+      ms-azure-devops.azure-pipelines
+      christopherhx.azure-pipelines-vscode-ext
+      redhat.vscode-yaml
+      christian-kohler.path-intellisense
+    ]
+    ++ (with pkgs.vscode-extensions; [
+      ms-vscode-remote.remote-ssh
+      ms-vscode-remote.remote-ssh-edit
+    ]);
   shared-userSettings = {
     "editor.fontFamily" = "'Hack Nerd Font','Droid Sans Mono', 'monospace'";
     "terminal.integrated.fontFamily" = "'Hack Nerd Font'";
@@ -29,6 +35,11 @@
     "workbench.colorTheme" = "Default Dark+";
     "workbench.iconTheme" = "material-icon-theme";
     "remote.SSH.localServerDownload" = "off";
+    "remote.SSH.defaultExtensions" = [
+      "PKief.material-icon-theme"
+      "PKief.material-product-icons"
+      "mhutchie.git-graph"
+    ];
   };
 in {
   programs.vscode = {
