@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{
   imports = [
     ./hyprland.nix
     ./hypridle.nix
@@ -7,7 +7,8 @@
     ./waybar
     ./dunst.nix
   ];
-  home.packages = with pkgs; [
-    wlogout
-  ];
+  programs.wlogout = {
+    enable = true;
+  };
+  services.hyprpolkitagent.enable = true;
 }
