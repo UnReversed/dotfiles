@@ -12,9 +12,6 @@
         plugins = ["git" "terraform"];
         theme = "gnzh";
       };
-      initExtraBeforeCompInit = ''
-        compdef kubecolor=kubectl
-      '';
       shellAliases = {
         cd = "z";
         cat = "bat";
