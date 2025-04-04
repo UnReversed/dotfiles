@@ -10,11 +10,7 @@
       jnoortheen.nix-ide
       kamadorueda.alejandra
 
-      # ms-vscode-remote.remote-ssh
-      # ms-vscode-remote.remote-ssh-edit
-
       ms-vscode.remote-explorer
-      ms-vscode-remote.remote-containers
       ms-azuretools.vscode-docker
       ms-kubernetes-tools.vscode-kubernetes-tools
 
@@ -27,6 +23,7 @@
     ++ (with pkgs.vscode-extensions; [
       ms-vscode-remote.remote-ssh
       ms-vscode-remote.remote-ssh-edit
+      ms-vscode-remote.remote-containers
     ]);
   shared-userSettings = {
     "editor.fontFamily" = "'Hack Nerd Font','Droid Sans Mono', 'monospace'";
@@ -39,6 +36,7 @@
       "PKief.material-icon-theme"
       "PKief.material-product-icons"
       "mhutchie.git-graph"
+      "waderyan.gitblame"
     ];
   };
 in {
@@ -69,6 +67,9 @@ in {
           ++ (with pkgs.vscode-extensions; [
             ms-dotnettools.csdevkit
             ms-dotnettools.csharp
+            ms-dotnettools.vscode-dotnet-runtime
+            ms-dotnettools.vscodeintellicode-csharp
+            humao.rest-client
           ])
           ++ shared-extensions;
         userSettings =

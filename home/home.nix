@@ -25,5 +25,8 @@
     username = "unreversed";
     homeDirectory = "/home/unreversed";
     stateVersion = "23.11";
+    sessionVariables = {
+      EDITOR = "nvim";
+    };
   };
 }
