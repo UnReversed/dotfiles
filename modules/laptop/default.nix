@@ -3,7 +3,10 @@
     ./bluetooth.nix
   ];
 
-  services.thermald.enable = true;
+  services = {
+    thermald.enable = true;
+    hardware.bolt.enable = true;
+  };
   programs.auto-cpufreq = {
     enable = true;
     settings = {
