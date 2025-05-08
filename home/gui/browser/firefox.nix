@@ -32,30 +32,33 @@ in {
         "trailhead.firstrun.didSeeAboutWelcome" = true;
       };
 
-      bookmarks = [
-        {
-          name = "nix sites";
-          toolbar = true;
-          bookmarks = [
-            {
-              name = "home-manager options";
-              url = "https://home-manager-options.extranix.com/";
-            }
-            {
-              name = "nix search packages";
-              url = "https://search.nixos.org/packages";
-            }
-            {
-              name = "mynixos";
-              url = "https://mynixos.com/options";
-            }
-            {
-              name = "nix-versions";
-              url = "https://lazamar.co.uk/nix-versions/";
-            }
-          ];
-        }
-      ];
+      bookmarks = {
+        force = true;
+        settings = [
+          {
+            name = "nix sites";
+            toolbar = true;
+            bookmarks = [
+              {
+                name = "home-manager options";
+                url = "https://home-manager-options.extranix.com/";
+              }
+              {
+                name = "nix search packages";
+                url = "https://search.nixos.org/packages";
+              }
+              {
+                name = "mynixos";
+                url = "https://mynixos.com/options";
+              }
+              {
+                name = "nix-versions";
+                url = "https://lazamar.co.uk/nix-versions/";
+              }
+            ];
+          }
+        ];
+      };
       extensions = {
         force = true;
         packages = with addons; [
