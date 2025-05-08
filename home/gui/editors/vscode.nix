@@ -31,6 +31,7 @@
     "terminal.integrated.enableImages" = true;
     "workbench.colorTheme" = "Default Dark+";
     "workbench.iconTheme" = "material-icon-theme";
+    "gitblame.inlineMessageEnabled" = true;
     "remote.SSH.localServerDownload" = "off";
     "remote.SSH.defaultExtensions" = [
       "PKief.material-icon-theme"
@@ -77,6 +78,16 @@ in {
             "csharp.suppressBuildAssetsNotification" = true;
           }
           // shared-userSettings;
+      };
+      go = {
+        extensions =
+          (
+            with pkgs.vscode-extensions; [
+              golang.go
+            ]
+          )
+          ++ shared-extensions;
+        userSettings = shared-userSettings;
       };
     };
   };
