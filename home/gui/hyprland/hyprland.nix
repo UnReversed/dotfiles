@@ -110,21 +110,15 @@ in {
         "3, monitor:desc:Dell Inc. DELL U2414H 292K476D1KHL, default:true"
       ];
 
-      # Example windowrule v1
-      # windowrule = float, ^(kitty)$
       # Example windowrule v2
       # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
       # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
       windowrulev2 = [
-        "noanim, class:^(flameshot)$"
-        "noinitialfocus, class:^(flameshot)$"
-        "move 0 0,class:^(flameshot)$"
-        "float, class:^(flameshot)$"
-        "suppressevent fullscreen,class:^(flameshot)$"
-        "stayfocused,class:^(flameshot)$"
-        "noborder,class:^(flameshot)$"
-        "pin, class:^(flameshot)$"
-        "monitor 2, class:^(flameshot)$"
+        "move 0 0,class:(flameshot),title:(flameshot)"
+        "pin,class:(flameshot),title:(flameshot)"
+        "fullscreenstate,class:(flameshot),title:(flameshot)"
+        "float,class:(flameshot),title:(flameshot)"
+        "monitor 2,class:(flameshot),title:(flameshot)"
       ];
       # windowrule = [
       #   "suppressevent fullscreen,flameshot"
