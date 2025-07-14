@@ -11,7 +11,9 @@
       kamadorueda.alejandra
 
       ms-vscode.remote-explorer
-      ms-azuretools.vscode-docker
+      # ms-azuretools.vscode-docker
+      docker.docker
+      ms-azuretools.vscode-containers
       ms-kubernetes-tools.vscode-kubernetes-tools
 
       ms-kubernetes-tools.vscode-aks-tools
