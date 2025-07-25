@@ -70,7 +70,7 @@
           };
           sharedModules = [
             nixvim.homeManagerModules.nixvim
-            nix-index-database.hmModules.nix-index
+            nix-index-database.homeModules.nix-index
           ];
           users.unreversed = import ./home/home.nix;
         };
