@@ -1,3 +1,8 @@
-{...}: {
-  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
+{pkgs, ...}: {
+  networking.networkmanager = {
+    plugins = with pkgs; [
+      networkmanager-openvpn
+    ];
+    enable = true;
+  };
 }
