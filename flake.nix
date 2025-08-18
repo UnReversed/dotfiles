@@ -69,7 +69,7 @@
             inherit inputs self outputs;
           };
           sharedModules = [
-            nixvim.homeManagerModules.nixvim
+            nixvim.homeModules.nixvim
             nix-index-database.homeModules.nix-index
           ];
           users.unreversed = import ./home/home.nix;
