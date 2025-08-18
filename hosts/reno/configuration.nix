@@ -26,7 +26,12 @@
   time.timeZone = "Europe/Warsaw";
 
   # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocales = [
+      "pl_PL.UTF-8/UTF-8"
+    ];
+  };
   console = {
     # keyMap = "us";
     useXkbConfig = true; # use xkb.options in tty.

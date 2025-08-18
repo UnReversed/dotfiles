@@ -159,6 +159,7 @@
           timezone = "Europe/Warsaw";
           format = "󱨴 {:%d-%m}";
           tooltip-format = "<tt>{calendar}</tt>";
+          locale = "pl_PL.UTF-8";
           calendar = {
             mode = "month";
             mode-mon-col = 3;
