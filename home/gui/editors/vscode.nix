@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  extension = pkgs.pkgs-ext.vscode-marketplace;
+  extension = pkgs.nix-vscode-extensions.vscode-marketplace;
   shared-extensions = with extension;
     [
       pkief.material-product-icons
@@ -101,5 +101,6 @@ in {
   };
   home.packages = with pkgs; [
     temurin-bin-21
+    nodejs_24
   ];
 }

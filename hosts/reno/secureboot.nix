@@ -1,4 +1,7 @@
-{
+{lanzaboote, ...}: {
+  imports = [
+    lanzaboote.nixosModules.lanzaboote
+  ];
   boot = {
     loader = {
       systemd-boot.enable = false;
@@ -10,7 +13,7 @@
     };
     lanzaboote = {
       enable = true;
-      pkiBundle = "/etc/secureboot";
+      pkiBundle = "/var/lib/sbctl";
     };
   };
 }

@@ -1,6 +1,7 @@
-{
+{auto-cpufreq, ...}: {
   imports = [
     ./bluetooth.nix
+    auto-cpufreq.nixosModules.default
   ];
 
   services = {

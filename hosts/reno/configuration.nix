@@ -1,5 +1,10 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  disko,
+  ...
+}: {
   imports = [
+    disko.nixosModules.disko
     ./hardware-configuration.nix
     ./secureboot.nix
     ./disko.nix

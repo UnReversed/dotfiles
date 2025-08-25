@@ -1,11 +1,11 @@
 {
   pkgs,
-  inputs,
-  outputs,
+  nixpkgs,
+  nix-vscode-extensions,
   ...
 }: {
   nix = {
-    nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+    # nixPath = ["nixpkgs=${nixpkgs}"];
     settings = {
       experimental-features = ["nix-command" "flakes"];
 
@@ -53,7 +53,8 @@
       allowUnfree = true;
     };
     overlays = [
-      outputs.overlays.vscode-packages
+      # outputs.overlays.vscode-packages
+      nix-vscode-extensions.overlays.default
     ];
   };
 }

@@ -48,56 +48,41 @@
   outputs = {
     nixpkgs,
     home-manager,
-    disko,
-    lanzaboote,
-    auto-cpufreq,
-    nix-index-database,
-    nixvim,
     self,
     ...
   } @ inputs: let
-    inherit (self) outputs;
-    specialArgs = {inherit inputs self outputs;};
+    specialArgs = inputs;
     modules = [
-      disko.nixosModules.disko
       home-manager.nixosModules.home-manager
       {
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
-          extraSpecialArgs = {
-            inherit inputs self outputs;
-          };
-          sharedModules = [
-            nixvim.homeModules.nixvim
-            nix-index-database.homeModules.nix-index
-          ];
+          extraSpecialArgs =
+            specialArgs
+            // {
+              inherit self;
+            };
           users.unreversed = import ./home/home.nix;
         };
       }
     ];
   in {
-    overlays = import ./overlays {inherit inputs;};
+    # overlays = import ./overlays {inherit inputs;};
     devShells."x86_64-linux".default = import ./devshell {inherit inputs;};
     nixosConfigurations = {
       test = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         inherit specialArgs;
         modules =
-          [
-            ./hosts/test/configuration.nix
-          ]
+          [./hosts/test/configuration.nix]
           ++ modules;
       };
       reno = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         inherit specialArgs;
         modules =
-          [
-            ./hosts/reno/configuration.nix
-            lanzaboote.nixosModules.lanzaboote
-            auto-cpufreq.nixosModules.default
-          ]
+          [./hosts/reno/configuration.nix]
           ++ modules;
       };
     };
