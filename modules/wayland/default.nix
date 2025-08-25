@@ -20,9 +20,10 @@
     hypridle.enable = true;
     greetd = {
       enable = true;
+      useTextGreeter = true;
       settings = {
         default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --time --asterisks --remember-session --theme border=blue;container=black;prompt=green;input=red";
+          command = "${pkgs.tuigreet}/bin/tuigreet -r --time --asterisks --remember-session --theme border=blue;container=black;prompt=green;input=red";
           user = "greeter";
         };
       };
