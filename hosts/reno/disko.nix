@@ -47,7 +47,10 @@
                 type = "luks";
                 name = "crypted2";
                 #passwordFile = "/tmp/secret.key";
-                settings.allowDiscards = true;
+                settings = {
+                  allowDiscards = true;
+                  crypttabExtraOpts = ["tpm2-device=auto"];
+                };
                 content = {
                   type = "btrfs";
                   extraArgs = [
