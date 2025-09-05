@@ -12,7 +12,7 @@
     kdePackages.breeze-icons
     rambox
     keepassxc
-    libsForQt5.ark
+    kdePackages.ark
 
     pavucontrol
   ];
