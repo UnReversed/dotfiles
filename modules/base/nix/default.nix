@@ -1,7 +1,6 @@
 {
   pkgs,
-  nixpkgs,
-  nix-vscode-extensions,
+  nix4vscode,
   ...
 }: {
   nix = {
@@ -53,8 +52,7 @@
       allowUnfree = true;
     };
     overlays = [
-      # outputs.overlays.vscode-packages
-      nix-vscode-extensions.overlays.default
+      nix4vscode.overlays.default
     ];
   };
 }

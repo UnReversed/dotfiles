@@ -1,33 +1,28 @@
 {pkgs, ...}: let
-  extension = pkgs.nix-vscode-extensions.vscode-marketplace;
-  shared-extensions = with extension;
-    [
-      pkief.material-product-icons
-      pkief.material-icon-theme
-      mhutchie.git-graph
-      waderyan.gitblame
-      mkhl.direnv
-      jnoortheen.nix-ide
-      kamadorueda.alejandra
+  shared-extensions = pkgs.nix4vscode.forVscode [
+    "pkief.material-product-icons"
+    "pkief.material-icon-theme"
+    "mhutchie.git-graph"
+    "waderyan.gitblame"
+    "mkhl.direnv"
+    "jnoortheen.nix-ide"
+    "kamadorueda.alejandra"
 
-      ms-vscode.remote-explorer
-      # ms-azuretools.vscode-docker
-      docker.docker
-      ms-azuretools.vscode-containers
-      ms-kubernetes-tools.vscode-kubernetes-tools
+    "ms-vscode.remote-explorer"
+    "docker.docker"
+    "ms-azuretools.vscode-containers"
+    "ms-kubernetes-tools.vscode-kubernetes-tools"
 
-      ms-kubernetes-tools.vscode-aks-tools
-      ms-azure-devops.azure-pipelines
-      christopherhx.azure-pipelines-vscode-ext
-      redhat.vscode-yaml
-      christian-kohler.path-intellisense
-    ]
-    ++ (with pkgs.vscode-extensions; [
-      ms-vscode-remote.remote-ssh
-      ms-vscode-remote.remote-ssh-edit
-      ms-vscode-remote.remote-containers
-      sonarsource.sonarlint-vscode
-    ]);
+    "ms-kubernetes-tools.vscode-aks-tools"
+    "ms-azure-devops.azure-pipelines"
+    "christopherhx.azure-pipelines-vscode-ext"
+    "redhat.vscode-yaml"
+    "christian-kohler.path-intellisense"
+    "ms-vscode-remote.remote-ssh"
+    "ms-vscode-remote.remote-ssh-edit"
+    "ms-vscode-remote.remote-containers"
+    "sonarsource.sonarlint-vscode"
+  ];
   shared-userSettings = {
     "editor.fontFamily" = "'Hack Nerd Font','Droid Sans Mono', 'monospace'";
     "terminal.integrated.fontFamily" = "'Hack Nerd Font'";
@@ -45,21 +40,23 @@
       "mhutchie.git-graph"
       "waderyan.gitblame"
     ];
-    "sonarlint.pathToNodeExecutable" = "${pkgs.nodejs_24}";
+    "sonarlint.pathToNodeExecutable" = "${pkgs.nodejs_24}/bin/node";
+    "docker.extension.enableComposeLanguageServer" = false;
   };
 in {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode;
     profiles = {
       default = {
-        extensions = with extension;
-          [
-            hashicorp.terraform
-            hashicorp.hcl
+        enableExtensionUpdateCheck = false;
+        enableUpdateCheck = false;
+        extensions =
+          pkgs.nix4vscode.forVscode [
+            "hashicorp.terraform"
+            "hashicorp.hcl"
 
-            ms-python.python
-            ms-vscode.powershell
+            "ms-python.python"
+            "ms-vscode.powershell"
           ]
           ++ shared-extensions;
         userSettings =
@@ -68,18 +65,16 @@ in {
       };
       csharp = {
         extensions =
-          (with extension; [
-            ms-azuretools.vscode-azureresourcegroups
-            ms-mssql.mssql
-            ms-azuretools.vscode-azurefunctions
-          ])
-          ++ (with pkgs.vscode-extensions; [
-            ms-dotnettools.csdevkit
-            ms-dotnettools.csharp
-            ms-dotnettools.vscode-dotnet-runtime
-            ms-dotnettools.vscodeintellicode-csharp
-            humao.rest-client
-          ])
+          pkgs.nix4vscode.forVscode [
+            "ms-azuretools.vscode-azureresourcegroups"
+            "ms-mssql.mssql"
+            "ms-azuretools.vscode-azurefunctions"
+            "ms-dotnettools.csdevkit"
+            "ms-dotnettools.csharp"
+            "ms-dotnettools.vscode-dotnet-runtime"
+            "ms-dotnettools.vscodeintellicode-csharp"
+            "humao.rest-client"
+          ]
           ++ shared-extensions;
         userSettings =
           {
@@ -89,18 +84,15 @@ in {
       };
       go = {
         extensions =
-          (
-            with pkgs.vscode-extensions; [
-              golang.go
-            ]
-          )
+          pkgs.nix4vscode.forVscode [
+            "golang.go"
+          ]
           ++ shared-extensions;
         userSettings = shared-userSettings;
       };
     };
   };
-  home.packages = with pkgs; [
-    temurin-bin-21
-    nodejs_24
-  ];
+  # home.packages = with pkgs; [
+  #   temurin-bin-21
+  # ];
 }
