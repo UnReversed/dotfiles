@@ -1,9 +1,19 @@
 {pkgs, ...}: {
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-unwrapped;
     extraConfig = {
       run-command = "uwsm app -- {cmd}";
     };
+    plugins = with pkgs; [
+      rofi-calc
+    ];
+    modes = [
+      "window"
+      "run"
+      "ssh"
+      "drun"
+      "combi"
+      "calc"
+    ];
   };
 }
