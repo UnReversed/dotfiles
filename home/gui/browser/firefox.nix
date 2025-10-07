@@ -55,6 +55,10 @@ in {
                 name = "nix-versions";
                 url = "https://lazamar.co.uk/nix-versions/";
               }
+              {
+                name = "nix pr-tracker";
+                url = "https://nixpk.gs/pr-tracker.html";
+              }
             ];
           }
         ];
