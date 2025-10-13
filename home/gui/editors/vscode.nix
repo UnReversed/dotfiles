@@ -41,6 +41,7 @@
       "waderyan.gitblame"
     ];
     "sonarlint.pathToNodeExecutable" = "${pkgs.nodejs_24}/bin/node";
+    "sonarlint.ls.javaHome" = "${pkgs.temurin-bin-25}";
     "docker.extension.enableComposeLanguageServer" = false;
   };
 in {
@@ -92,7 +93,4 @@ in {
       };
     };
   };
-  # home.packages = with pkgs; [
-  #   temurin-bin-21
-  # ];
 }
