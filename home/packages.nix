@@ -3,7 +3,7 @@
     # nix LSP
     nixd
 
-    du-dust
+    dust
     # nix formatter
     alejandra
 
