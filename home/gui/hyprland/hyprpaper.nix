@@ -10,12 +10,12 @@ in {
   services.hyprpaper = {
     enable = true;
     settings = {
-      preload = [
-        "${Pictures}/ign_astronaut.png"
-      ];
-
       wallpaper = [
-        " ,${Pictures}/ign_astronaut.png"
+        {
+          monitor = "";
+          path = "${Pictures}/ign_astronaut.png";
+          fit_mode = "cover";
+        }
       ];
     };
   };
