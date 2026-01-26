@@ -73,7 +73,7 @@ in {
             "ms-dotnettools.csdevkit"
             "ms-dotnettools.csharp"
             "ms-dotnettools.vscode-dotnet-runtime"
-            "ms-dotnettools.vscodeintellicode-csharp"
+            "github.copilot-chat"
             "humao.rest-client"
           ]
           ++ shared-extensions;
@@ -90,6 +90,47 @@ in {
           ]
           ++ shared-extensions;
         userSettings = shared-userSettings;
+      };
+      nodejs = {
+        extensions =
+          pkgs.nix4vscode.forVscode [
+            "mikestead.dotenv"
+            "EditorConfig.EditorConfig"
+            "dbaeumer.vscode-eslint"
+            "xabikos.JavaScriptSnippets"
+            "christian-kohler.npm-intellisense"
+            "esbenp.prettier-vscode"
+            "humao.rest-client"
+            "ms-azuretools.vscode-azurefunctions"
+            "ms-azuretools.vscode-azureresourcegroups"
+            "ms-azuretools.vscode-azurestorage"
+            "Azurite.azurite"
+          ]
+          ++ shared-extensions;
+        userSettings =
+          {
+            "editor.formatOnPaste" = true;
+            "git.autofetch" = true;
+            "[markdown]" = {
+              "editor.wordWrap" = "on";
+            };
+            "[json]" = {
+              "editor.defaultFormatter" = "esbenp.prettier-vscode";
+            };
+            "[jsonc]" = {
+              "editor.defaultFormatter" = "vscode.json-language-features";
+            };
+            "[html]" = {
+              "editor.defaultFormatter" = "esbenp.prettier-vscode";
+            };
+            "[javascript]" = {
+              "editor.defaultFormatter" = "esbenp.prettier-vscode";
+            };
+            "[typescript]" = {
+              "editor.defaultFormatter" = "esbenp.prettier-vscode";
+            };
+          }
+          // shared-userSettings;
       };
     };
   };
