@@ -3,7 +3,6 @@
     "pkief.material-product-icons"
     "pkief.material-icon-theme"
     "mhutchie.git-graph"
-    "waderyan.gitblame"
     "mkhl.direnv"
     "jnoortheen.nix-ide"
     "kamadorueda.alejandra"
@@ -30,7 +29,7 @@
     "terminal.integrated.enableImages" = true;
     "workbench.colorTheme" = "Default Dark+";
     "workbench.iconTheme" = "material-icon-theme";
-    "gitblame.inlineMessageEnabled" = true;
+    "git.blame.editorDecoration.enabled" = true;
     "remote.SSH.localServerDownload" = "off";
     "remote.SSH.enableX11Forwarding" = false;
     "remote.SSH.connectTimeout" = 30;
@@ -38,7 +37,6 @@
       "PKief.material-icon-theme"
       "PKief.material-product-icons"
       "mhutchie.git-graph"
-      "waderyan.gitblame"
     ];
     "sonarlint.pathToNodeExecutable" = "${pkgs.nodejs_24}/bin/node";
     "sonarlint.ls.javaHome" = "${pkgs.temurin-bin-25}";
