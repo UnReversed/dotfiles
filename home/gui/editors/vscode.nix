@@ -1,5 +1,6 @@
 {pkgs, ...}: let
-  shared-extensions = pkgs.nix4vscode.forVscode [
+  inherit (pkgs.nix4vscode) forVscode;
+  shared-extensions = forVscode [
     "pkief.material-product-icons"
     "pkief.material-icon-theme"
     "mhutchie.git-graph"
@@ -52,7 +53,7 @@ in {
         enableExtensionUpdateCheck = false;
         enableUpdateCheck = false;
         extensions =
-          pkgs.nix4vscode.forVscode [
+          forVscode [
             "hashicorp.terraform"
             "hashicorp.hcl"
 
@@ -66,7 +67,7 @@ in {
       };
       csharp = {
         extensions =
-          pkgs.nix4vscode.forVscode [
+          forVscode [
             "ms-azuretools.vscode-azureresourcegroups"
             "ms-mssql.mssql"
             "ms-azuretools.vscode-azurefunctions"
@@ -90,7 +91,7 @@ in {
       };
       go = {
         extensions =
-          pkgs.nix4vscode.forVscode [
+          forVscode [
             "golang.go"
           ]
           ++ shared-extensions;
@@ -98,7 +99,7 @@ in {
       };
       nodejs = {
         extensions =
-          pkgs.nix4vscode.forVscode [
+          forVscode [
             "mikestead.dotenv"
             "EditorConfig.EditorConfig"
             "dbaeumer.vscode-eslint"
