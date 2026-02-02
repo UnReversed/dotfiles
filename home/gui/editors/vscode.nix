@@ -6,6 +6,8 @@
     "mkhl.direnv"
     "jnoortheen.nix-ide"
     "kamadorueda.alejandra"
+    "GitHub.copilot"
+    "GitHub.copilot-chat"
 
     "ms-vscode.remote-explorer"
     "docker.docker"
@@ -25,7 +27,7 @@
   shared-userSettings = {
     "editor.fontFamily" = "'Hack Nerd Font','Droid Sans Mono', 'monospace'";
     "terminal.integrated.fontFamily" = "'Hack Nerd Font'";
-    "chat.agent.enabled" = false;
+    "chat.agent.enabled" = true;
     "terminal.integrated.enableImages" = true;
     "workbench.colorTheme" = "Default Dark+";
     "workbench.iconTheme" = "material-icon-theme";
@@ -68,13 +70,18 @@ in {
             "ms-azuretools.vscode-azureresourcegroups"
             "ms-mssql.mssql"
             "ms-azuretools.vscode-azurefunctions"
-            "ms-dotnettools.csdevkit"
-            "ms-dotnettools.csharp"
-            "ms-dotnettools.vscode-dotnet-runtime"
+            # "ms-dotnettools.csdevkit"
+            # "ms-dotnettools.csharp"
+            # "ms-dotnettools.vscode-dotnet-runtime"
             "github.copilot-chat"
             "humao.rest-client"
           ]
-          ++ shared-extensions;
+          ++ shared-extensions
+          ++ (with pkgs.vscode-extensions; [
+            ms-dotnettools.csdevkit
+            ms-dotnettools.csharp
+            ms-dotnettools.vscode-dotnet-runtime
+          ]);
         userSettings =
           {
             "csharp.suppressBuildAssetsNotification" = true;
