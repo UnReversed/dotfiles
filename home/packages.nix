@@ -8,5 +8,6 @@
     alejandra
 
     openvpn3
+    openconnect
   ];
 }
