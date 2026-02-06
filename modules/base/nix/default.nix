@@ -1,13 +1,13 @@
 {
+  nixpkgs,
   pkgs,
   nix4vscode,
   ...
 }: {
   nix = {
-    # nixPath = ["nixpkgs=${nixpkgs}"];
+    nixPath = ["nixpkgs=${nixpkgs}"];
     settings = {
       experimental-features = ["nix-command" "flakes"];
-
       auto-optimise-store = true;
       sandbox = true;
 
