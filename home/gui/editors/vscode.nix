@@ -44,6 +44,8 @@
     "sonarlint.pathToNodeExecutable" = "${pkgs.nodejs_24}/bin/node";
     "sonarlint.ls.javaHome" = "${pkgs.temurin-bin-25}";
     "docker.extension.enableComposeLanguageServer" = false;
+    "chat.mcp.gallery.enabled" = true;
+    "chat.mcp.access" = "allowed";
   };
 in {
   programs.vscode = {
@@ -58,6 +60,7 @@ in {
             "hashicorp.hcl"
 
             "ms-python.python"
+            "ms-python.vscode-pylance"
             "ms-vscode.powershell"
           ]
           ++ shared-extensions;
@@ -74,7 +77,8 @@ in {
             # "ms-dotnettools.csdevkit"
             # "ms-dotnettools.csharp"
             # "ms-dotnettools.vscode-dotnet-runtime"
-            "github.copilot-chat"
+            "vscjava.migrate-java-to-azure"
+            "vscjava.vscode-java-upgrade"
             "humao.rest-client"
           ]
           ++ shared-extensions
