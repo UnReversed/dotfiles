@@ -108,13 +108,13 @@ in {
       # Example windowrule v2
       # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
       # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-      windowrulev2 = [
-        "move 0 0,class:(flameshot),title:(flameshot)"
-        "pin,class:(flameshot),title:(flameshot)"
-        "fullscreenstate,class:(flameshot),title:(flameshot)"
-        "float,class:(flameshot),title:(flameshot)"
-        "monitor 2,class:(flameshot),title:(flameshot)"
-      ];
+      # windowrulev2 = [
+      #   "move 0 0,class:(flameshot),title:(flameshot)"
+      #   "pin,class:(flameshot),title:(flameshot)"
+      #   "fullscreenstate,class:(flameshot),title:(flameshot)"
+      #   "float,class:(flameshot),title:(flameshot)"
+      #   "monitor 2,class:(flameshot),title:(flameshot)"
+      # ];
       # windowrule = [
       #   "suppressevent fullscreen,flameshot"
       #   "float,flameshot"
