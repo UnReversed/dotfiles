@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let
-  addons = firefox-addons.packages.${pkgs.system};
+  addons = firefox-addons.packages.${pkgs.stdenv.hostPlatform.system};
 in {
   programs.firefox = {
     enable = true;
