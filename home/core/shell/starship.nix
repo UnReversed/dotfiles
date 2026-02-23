@@ -13,20 +13,12 @@
         symbol = " ";
       };
 
-      dart = {
-        symbol = " ";
-      };
-
       directory = {
         read_only = " 󰌾";
       };
 
       direnv = {
         disabled = false;
-      };
-
-      docker_context = {
-        symbol = " ";
       };
 
       git_branch = {
@@ -43,6 +35,10 @@
 
       hostname = {
         ssh_symbol = " ";
+      };
+
+      kubernetes = {
+        disabled = false;
       };
 
       nix_shell = {

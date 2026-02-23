@@ -9,7 +9,7 @@
       syntaxHighlighting.enable = true;
       oh-my-zsh = {
         enable = true;
-        plugins = ["git" "terraform"];
+        plugins = ["git" "terraform" "docker" "azure" "docker-compose" "opentofu" "uv"];
         theme = "gnzh";
       };
       shellAliases = {
