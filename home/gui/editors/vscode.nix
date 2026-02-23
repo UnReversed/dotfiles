@@ -7,7 +7,6 @@
     "mkhl.direnv"
     "jnoortheen.nix-ide"
     "kamadorueda.alejandra"
-    "GitHub.copilot"
     "GitHub.copilot-chat"
 
     "ms-vscode.remote-explorer"
@@ -46,6 +45,7 @@
     "docker.extension.enableComposeLanguageServer" = false;
     "chat.mcp.gallery.enabled" = true;
     "chat.mcp.access" = "allowed";
+    "github.copilot.nextEditSuggestions.enabled" = true;
   };
 in {
   programs.vscode = {
