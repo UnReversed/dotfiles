@@ -9,5 +9,6 @@
 
     openvpn3
     openconnect
+    devenv
   ];
 }
