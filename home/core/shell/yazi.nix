@@ -2,6 +2,7 @@
   programs.yazi = {
     enable = true;
     enableZshIntegration = true;
+    shellWrapperName = "yy";
     plugins = {
       starship = pkgs.fetchFromGitHub {
         owner = "Rolv-Apneseth";
