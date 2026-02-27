@@ -12,6 +12,11 @@
       tpm2.enable = true;
     };
     lanzaboote = {
+      autoGenerateKeys.enable = true;
+      autoEnrollKeys = {
+        enable = true;
+        autoReboot = true;
+      };
       enable = true;
       pkiBundle = "/var/lib/sbctl";
     };

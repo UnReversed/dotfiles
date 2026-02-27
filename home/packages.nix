@@ -10,5 +10,6 @@
     openvpn3
     openconnect
     devenv
+    sbctl
   ];
 }
