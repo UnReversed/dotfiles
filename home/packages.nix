@@ -7,7 +7,6 @@
     # nix formatter
     alejandra
 
-    openvpn3
     openconnect
     devenv
     sbctl
