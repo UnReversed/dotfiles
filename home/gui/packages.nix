@@ -10,7 +10,7 @@
     freerdp
 
     kdePackages.breeze-icons
-    rambox
+    ferdium
     keepassxc
     kdePackages.ark
 
