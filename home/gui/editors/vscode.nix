@@ -23,13 +23,14 @@
     "ms-vscode-remote.remote-ssh-edit"
     "ms-vscode-remote.remote-containers"
     "sonarsource.sonarlint-vscode"
+    "ms-mssql.mssql"
   ];
   shared-userSettings = {
     "editor.fontFamily" = "'Hack Nerd Font','Droid Sans Mono', 'monospace'";
     "terminal.integrated.fontFamily" = "'Hack Nerd Font'";
     "chat.agent.enabled" = true;
     "terminal.integrated.enableImages" = true;
-    "workbench.colorTheme" = "Default Dark+";
+    "workbench.colorTheme" = "Dark+";
     "workbench.iconTheme" = "material-icon-theme";
     "git.blame.editorDecoration.enabled" = true;
     "remote.SSH.localServerDownload" = "off";
