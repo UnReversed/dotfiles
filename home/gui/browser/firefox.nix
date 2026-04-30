@@ -1,12 +1,14 @@
 {
   firefox-addons,
   pkgs,
+  config,
   ...
 }: let
   addons = firefox-addons.packages.${pkgs.stdenv.hostPlatform.system};
 in {
   programs.firefox = {
     enable = true;
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
     profiles.default = {
       id = 0;
       name = "default";
