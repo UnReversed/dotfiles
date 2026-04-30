@@ -9,6 +9,9 @@ in {
         "desc:BOE 0x0B8E,1920x1080@60.0,1600x1440,1.0"
         "desc:LG Electronics LG ULTRAGEAR 401NTCZ6T187,2560x1440,2560x0,1"
         "desc:LG Electronics LG ULTRAGEAR 312NTCZ8P275,2560x1440,0x0,1"
+        # "desc:BOE 0x0B8E,1920x1080@60.0,3840x0,1.0"
+        # "desc:Dell Inc. DELL U2414H 292K473Q0JVL,1920x1080,1920x0,1"
+        # "desc:Dell Inc. DELL U2414H 292K46C65D9L,1920x1080,0x0,1"
         "HDMI-A-1, 2160x1440@60, 0x0, 1"
         ",preferred,auto,auto"
       ];
@@ -101,8 +104,8 @@ in {
         "3, monitor:desc:LG Electronics LG ULTRAGEAR 401NTCZ6T187, default:true"
 
         #work
-        "2, monitor:desc:Dell Inc. DELL U2414H 292K473P079L, default:true"
-        "3, monitor:desc:Dell Inc. DELL U2414H 292K476D1KHL, default:true"
+        "2, monitor:desc:Dell Inc. DELL U2414H 292K473Q0JVL, default:true"
+        "3, monitor:desc:Dell Inc. DELL U2414H 292K46C65D9L, default:true"
       ];
 
       # Example windowrule v2
@@ -131,7 +134,7 @@ in {
         "${super}, E, exec, dolphin"
         "${super}, V, togglefloating"
         "${super}, R, exec, rofi -show drun -show-icons"
-        "${super}, L, exec, pidof hyprlock || hyprlock --immediate"
+        "${super}, L, exec, pidof hyprlock || hyprlock"
         "${super}, P, pseudo" # dwindle
         "${super}, J, togglesplit" # dwindle
         "${super}, Print, exec, flameshot gui" # dwindle
