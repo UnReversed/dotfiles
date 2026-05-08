@@ -1,6 +1,8 @@
 {pkgs, ...}: {
+  imports = [
+    ./ghostty.nix
+  ];
   home.packages = with pkgs; [
-    openconnect
-    sbctl
+    ueberzugpp
   ];
 }

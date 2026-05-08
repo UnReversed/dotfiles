@@ -4,6 +4,10 @@
     ./gui
 
     ./packages.nix
+    ./terminal
+    ./terminal/emulator
+
+    ./programs
 
     ./dev-tools/Azure.nix
     ./dev-tools/terraform.nix
@@ -16,10 +20,6 @@
   };
   programs.home-manager = {
     enable = true;
-  };
-  programs.nh = {
-    enable = true;
-    flake = "/home/unreversed/nixos";
   };
   home = {
     username = "unreversed";
