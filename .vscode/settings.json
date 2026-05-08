@@ -3,7 +3,10 @@
     "nix.serverPath": "nixd",
     "nix.serverSettings": {
         "nixd": {
-            "options": {
+            "formatting": {
+               "command": ["alejandra"],
+            },            
+        "options": {
                 "nixos": {
                     "expr": "(builtins.getFlake \"${workspaceFolder}\").nixosConfigurations.reno.options"
                 },

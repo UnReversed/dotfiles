@@ -30,6 +30,12 @@
     "terminal.integrated.fontFamily" = "'Hack Nerd Font'";
     "chat.agent.enabled" = true;
     "terminal.integrated.enableImages" = true;
+    "terminal.integrated.defaultProfile.linux" = "zsh";
+    "terminal.integrated.profiles.linux" = {
+      "zsh" = {
+        "path" = "/etc/profiles/per-user/unreversed/bin/zsh";
+      };
+    };
     "workbench.colorTheme" = "Dark+";
     "workbench.iconTheme" = "material-icon-theme";
     "git.blame.editorDecoration.enabled" = true;

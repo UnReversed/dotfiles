@@ -42,14 +42,22 @@
       url = "github:nix-community/nixvim";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs-devenv = {
+      url = "github:cachix/devenv-nixpkgs/rolling";
+    };
+    devenv = {
+      url = "github:cachix/devenv";
+    };
   };
 
   outputs = {
     nixpkgs,
     home-manager,
+    devenv,
     self,
     ...
   } @ inputs: let
+    system = "x86_64-linux";
     specialArgs = inputs;
     modules = [
       home-manager.nixosModules.home-manager
@@ -68,7 +76,7 @@
     ];
   in {
     # overlays = import ./overlays {inherit inputs;};
-    devShells."x86_64-linux".default = import ./devshell {inherit inputs;};
+    devShells."x86_64-linux".default = import ./devshell {inherit inputs nixpkgs devenv system;};
     nixosConfigurations = {
       test = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
