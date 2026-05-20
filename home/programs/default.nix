@@ -23,6 +23,11 @@
   services = {
     flameshot = {
       enable = true;
+      settings = {
+        General = {
+          useGrimAdapter = true;
+        };
+      };
     };
     network-manager-applet.enable = true;
     blueman-applet.enable = true;
