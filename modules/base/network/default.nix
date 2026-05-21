@@ -3,6 +3,7 @@
     plugins = with pkgs; [
       networkmanager-openvpn
       networkmanager-openconnect
+      networkmanager-fortisslvpn
     ];
     enable = true;
   };
