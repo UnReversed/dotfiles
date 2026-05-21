@@ -4,6 +4,7 @@ in {
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = false;
+    configType = "hyprlang";
     settings = {
       monitor = [
         "desc:BOE 0x0B8E,1920x1080@60.0,1600x1440,1.0"
@@ -76,7 +77,6 @@ in {
       };
       dwindle = {
         # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
-        pseudotile = true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
         preserve_split = true; # you probably want this
       };
 
@@ -136,7 +136,6 @@ in {
         "${super}, R, exec, rofi -show drun -show-icons"
         "${super}, L, exec, pidof hyprlock || hyprlock"
         "${super}, P, pseudo" # dwindle
-        "${super}, J, togglesplit" # dwindle
         "${super}, Print, exec, flameshot gui" # dwindle
         "${super}, F, fullscreen"
 
