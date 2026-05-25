@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-legacy.url = "github:NixOS/nixpkgs/nixos-24.05";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -52,13 +53,21 @@
 
   outputs = {
     nixpkgs,
+    nixpkgs-legacy,
     home-manager,
     devenv,
     self,
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    specialArgs = inputs;
+    specialArgs =
+      inputs
+      // {
+        pkgs-legacy = import nixpkgs-legacy {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      };
     modules = [
       home-manager.nixosModules.home-manager
       {
