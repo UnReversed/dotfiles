@@ -1,30 +1,34 @@
 {pkgs, ...}: let
   inherit (pkgs.nix4vscode) forVscode;
-  shared-extensions = forVscode [
-    "pkief.material-product-icons"
-    "pkief.material-icon-theme"
-    "mhutchie.git-graph"
-    "mkhl.direnv"
-    "jnoortheen.nix-ide"
-    "kamadorueda.alejandra"
-    "GitHub.copilot-chat"
+  shared-extensions =
+    forVscode [
+      "pkief.material-product-icons"
+      "pkief.material-icon-theme"
+      "mhutchie.git-graph"
+      "mkhl.direnv"
+      "jnoortheen.nix-ide"
+      "kamadorueda.alejandra"
+      "GitHub.copilot-chat"
 
-    "ms-vscode.remote-explorer"
-    "docker.docker"
-    "ms-azuretools.vscode-containers"
-    "ms-kubernetes-tools.vscode-kubernetes-tools"
+      "ms-vscode.remote-explorer"
+      "docker.docker"
+      "ms-azuretools.vscode-containers"
+      "ms-kubernetes-tools.vscode-kubernetes-tools"
 
-    "ms-kubernetes-tools.vscode-aks-tools"
-    "ms-azure-devops.azure-pipelines"
-    "christopherhx.azure-pipelines-vscode-ext"
-    "redhat.vscode-yaml"
-    "christian-kohler.path-intellisense"
-    "ms-vscode-remote.remote-ssh"
-    "ms-vscode-remote.remote-ssh-edit"
-    "ms-vscode-remote.remote-containers"
-    "sonarsource.sonarlint-vscode"
-    "ms-mssql.mssql"
-  ];
+      "ms-kubernetes-tools.vscode-aks-tools"
+      "ms-azure-devops.azure-pipelines"
+      "christopherhx.azure-pipelines-vscode-ext"
+      "redhat.vscode-yaml"
+      "christian-kohler.path-intellisense"
+      "ms-vscode-remote.remote-ssh"
+      "ms-vscode-remote.remote-ssh-edit"
+      "ms-vscode-remote.remote-containers"
+      "sonarsource.sonarlint-vscode"
+      "ms-mssql.mssql"
+    ]
+    ++ pkgs.nix4vscode.forVscodePrerelease [
+      "datakurre.devenv"
+    ];
   shared-userSettings = {
     "editor.fontFamily" = "'Hack Nerd Font','Droid Sans Mono', 'monospace'";
     "terminal.integrated.fontFamily" = "'Hack Nerd Font'";

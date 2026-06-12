@@ -16,6 +16,9 @@
         cd = "z";
         cat = "bat";
       };
+      initContent = ''
+        eval "$(devenv hook zsh)"
+      '';
     };
     zoxide = {
       enable = true;
@@ -31,9 +34,14 @@
     };
     nix-your-shell = {
       enable = true;
+      enableZshIntegration = true;
+      nix-output-monitor = {
+        enable = true;
+      };
     };
     pay-respects = {
       enable = true;
+      enableZshIntegration = true;
     };
     bat = {
       enable = true;
