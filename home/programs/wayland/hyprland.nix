@@ -128,7 +128,7 @@ in {
 
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
       bind = [
-        "${super}, Q, exec, uwsm app -- ghostty"
+        "${super}, Q, exec, uwsm app -- ghostty +new-window"
         "${super}, C, killactive"
         "${super}, M, exit"
         "${super}, E, exec, dolphin"
