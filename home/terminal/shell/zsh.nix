@@ -18,6 +18,7 @@
       };
       initContent = ''
         eval "$(devenv hook zsh)"
+        export DEVENV_SHELL_TYPE=zsh
       '';
     };
     zoxide = {
