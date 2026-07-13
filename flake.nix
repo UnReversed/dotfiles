@@ -41,7 +41,7 @@
     };
     nixvim = {
       url = "github:nix-community/nixvim";
-      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs-devenv = {
       url = "github:cachix/devenv-nixpkgs/rolling";
