@@ -2,6 +2,7 @@
   nixpkgs,
   pkgs,
   nix4vscode,
+  krew2nix,
   ...
 }: {
   nix = {
@@ -55,6 +56,7 @@
     };
     overlays = [
       nix4vscode.overlays.default
+      krew2nix.overlay
     ];
   };
 }
