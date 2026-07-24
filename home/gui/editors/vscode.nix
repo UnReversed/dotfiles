@@ -89,7 +89,6 @@ in {
             # "ms-dotnettools.csharp"
             # "ms-dotnettools.vscode-dotnet-runtime"
             "vscjava.migrate-java-to-azure"
-            "vscjava.vscode-java-upgrade"
             "humao.rest-client"
           ]
           ++ shared-extensions
