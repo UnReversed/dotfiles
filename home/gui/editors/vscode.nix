@@ -124,7 +124,7 @@ in {
             "ms-azuretools.vscode-azurefunctions"
             "ms-azuretools.vscode-azureresourcegroups"
             "ms-azuretools.vscode-azurestorage"
-            "Azurite.azurite"
+            # "Azurite.azurite" # hash mismatch
           ]
           ++ shared-extensions;
         userSettings =
