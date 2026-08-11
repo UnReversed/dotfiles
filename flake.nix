@@ -64,6 +64,9 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+    packageSet = import ./packages {inherit pkgs;};
+
     specialArgs =
       inputs
       // {
@@ -90,6 +93,7 @@
   in {
     # overlays = import ./overlays {inherit inputs;};
     devShells."x86_64-linux".default = import ./devshell {inherit inputs nixpkgs devenv system;};
+    packages.${system} = packageSet;
     nixosConfigurations = {
       test = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
