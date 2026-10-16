@@ -92,7 +92,7 @@
     ];
   in {
     # overlays = import ./overlays {inherit inputs;};
-    devShells."x86_64-linux".default = import ./devshell {inherit inputs nixpkgs devenv system;};
+    devShells = import ./devshell {inherit inputs nixpkgs devenv system;};
     packages.${system} = packageSet;
     nixosConfigurations = {
       test = nixpkgs.lib.nixosSystem {
