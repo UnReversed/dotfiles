@@ -1,3 +1,3 @@
 {pkgs}: {
-  aks-desktop = import ./aks-desktop.nix {inherit pkgs;};
+  aks-desktop = import ./aks-desktop {inherit pkgs;};
 }
