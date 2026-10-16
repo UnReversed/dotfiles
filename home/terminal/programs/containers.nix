@@ -3,6 +3,7 @@
     (kubectl.withKrewPlugins (
       plugins: [
         plugins.edit-secret
+        plugins.gadget
       ]
     ))
     docker-compose
