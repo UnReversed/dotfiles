@@ -6,8 +6,8 @@
   ...
 }: let
   pkgs = nixpkgs.legacyPackages.${system};
-in
-  devenv.lib.mkShell {
+in {
+  "${system}".default = devenv.lib.mkShell {
     inherit inputs pkgs;
     modules = [
       ({pkgs, ...}: {
@@ -26,4 +26,5 @@ in
         };
       })
     ];
-  }
+  };
+}
